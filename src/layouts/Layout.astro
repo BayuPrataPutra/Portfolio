@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body
+    class="h-screen w-screen relative bg-slate-950 overflow-x-hidden scroll-smooth selection:bg-cyan-500 selection:text-white"
+  >
+    <!-- Background Glow & Grid -->
+    <div class="fixed inset-0 -z-10 pointer-events-none">
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600 rounded-full blur-[150px] opacity-40"
+      >
+      </div>
+      <div
+        class="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-600 rounded-full blur-[150px] opacity-40"
+      >
+      </div>
+    </div>
+
+    <!-- kursor partikel -->
+    <div id="color1" class="kursor fixed bg-pink-300 opacity-0"></div>
+    <div id="color2" class="kursor fixed bg-yellow-300 opacity-0"></div>
+    <div id="color3" class="kursor fixed bg-cyan-300 opacity-0"></div>
+    <slot />
+
+    <script>
+      /* KURSOR */
+      const kursor = [
+        document.getElementById("color1")!,
+        document.getElementById("color2")!,
+        document.getElementById("color3")!,
+      ];
+
+      const radius = 100;
+      let angle = [0, 120, 240];
+      let cursor = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+      let cursorVisible = false;
+
+      // ketika kursor bergerak
+      document.addEventListener("mousemove", (e) => {
+        cursor.x = e.clientX;
+        cursor.y = e.clientY;
+        if (!cursorVisible) {
+          kursor.forEach((h) => {
+            if (h) h.style.opacity = "0.15";
+          });
+          cursorVisible = true;
+        }
+      });
+
+      // ketika kursor keluar viewport
+      document.addEventListener("mouseout", (e) => {
+        if (!e.relatedTarget) {
+          kursor.forEach((h) => {
+            if (h) h.style.opacity = "0";
+          });
+          cursorVisible = false;
+        }
+      });
+
+      function animate() {
+        if (cursorVisible) {
+          for (let i = 0; i < kursor.length; i++) {
+            angle[i] += 0.8;
+            const rad = (angle[i] * Math.PI) / 180;
+            const x = cursor.x + radius * Math.cos(rad) - 15;
+            const y = cursor.y + radius * Math.sin(rad) - 15;
+            kursor[i].style.transform = `translate(${x}px, ${y}px)`;
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+      type="module"></script>
+  </body>
+</html>
+
+<style>
+  @reference tailwindcss/base;
+  @reference tailwindcss/components;
+  @reference tailwindcss/utilities;
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .kursor {
+    transition: opacity 0.3s;
+    filter: blur(56px);
+    @apply pointer-events-none rounded-full opacity-0 h-[400px] w-[400px];
+  }
+</style>

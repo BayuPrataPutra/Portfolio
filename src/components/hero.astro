@@ -1,0 +1,74 @@
+<section
+  id="hero"
+  class="relative pt-20 md:pt-36 h-[100vh] lg:h-[100vh] md:h-[80vh] lg:pt-10 flex"
+>
+  <div class="container font-outfit mx-auto">
+    <div class="flex flex-col lg:flex-row">
+      <!-- Hero Text -->
+      <div class="w-full self-center px-4 lg:-translate-y-16 lg:w-1/2">
+        <h1
+          class="text-grad font-bold text-base pb-2 md:pb-5 lg:pb-10 md:text-3xl"
+        >
+          Hi everyone, my name is
+          <span
+            class="block font-bold text-4xl md:text-5xl text-slate-900 lg:text-6xl md:pt-5 dark:text-slate-50"
+          >
+            Bayu Pratama Putra
+          </span>
+        </h1>
+        <h2
+          class="font-semibold text-slate-400 text-base mb-10 md:mb-20 italic md:text-xl lg:text-2xl dark:text-slate-300"
+        >
+          Learning, Building, and Innovating in Machine Learning and IoT
+        </h2>
+
+        <a
+          href="#contact"
+          class="text-base bg-grad text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 md:text-2xl md:px-24"
+        >
+          Contact Me
+        </a>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="self-end lg:w-1/2 z-[-1] lg:z-0">
+        <div
+          class="mt-10 relative -translate-y-15 md:mt-0 md:-right-44 md:-translate-y-64 lg:translate-0 lg:right-0"
+        >
+          <img
+            src="/img/pasfoto.png"
+            alt="Bayu Pratama Putra"
+            class="md:scale-70 scale-90 lg:scale-100 [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [mask-repeat:no-repeat] [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [-webkit-mask-repeat:no-repeat] hover:saturate-150 transition-all duration-500"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="scroll-icon" class="flex justify-center pt-0 invisible lg:visible">
+      <a href="#about" id="nav-item">
+        <dotlottie-wc
+          src="https://lottie.host/ade908b4-b95e-463c-8e68-62cf3bfa0211/AZvirigdId.lottie"
+          style="width: 100px; height: 100px"
+          speed="1"
+          autoplay
+          loop></dotlottie-wc>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const scrollIconContainer = document.querySelector(".overflow-y-auto");
+  const scrollIcon = document.getElementById("scroll-icon");
+  if (scrollIconContainer && scrollIcon) {
+    scrollIconContainer.addEventListener("scroll", () => {
+    if (scrollIconContainer.scrollTop > 0) {
+      scrollIcon.classList.remove("lg:visible");
+      scrollIcon.classList.add("lg:invisible");
+    } else {
+      scrollIcon.classList.remove("lg:invisible");
+      scrollIcon.classList.add("lg:visible");
+    }
+  });
+  }  
+</script>

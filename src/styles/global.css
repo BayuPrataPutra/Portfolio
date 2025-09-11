@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.text-grad {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-cyan-500 to-violet-500;
+  }
+
+  .bg-grad {
+    @apply bg-gradient-to-br from-cyan-500 to-violet-500;
+  }
+
+  .bg-grad:hover {
+    @apply bg-gradient-to-br from-cyan-700 to-violet-700;
+  }
+  
+  .about-marquee-inner img {
+    @apply w-14 h-14 md:w-28 md:h-28 rounded-full object-contain shadow-lg p-2 bg-white;
+  }

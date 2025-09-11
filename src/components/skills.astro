@@ -1,0 +1,137 @@
+<div class="w-screen h-auto bg-transparent text-slate-100">
+  <section class="relative pt-20 md:pt-26 flex">
+    <div class="container font-outfit mx-auto px-6 lg:px-20">
+      <!-- Title -->
+      <h1 class="text-grad font-bold text-4xl md:text-5xl text-center mb-12">
+        Education & Skills
+      </h1>
+
+      <!-- Education -->
+      <div class="mb-16">
+        <h2 class="text-4xl font-semibold mb-10">🎓 Education</h2>
+        <ul class="space-y-6">
+          <li
+            class="bg-slate-700/50 p-6 rounded-xl shadow-md hover:bg-slate-600 transition"
+          >
+            <h3 class="font-bold text-lg">
+              Universitas Widyatama (2021 – Present)
+            </h3>
+            <p class="text-slate-400">
+              Bachelor of Informatics Engineering – Focus on Interfacing System,
+              Artificial Intelligence, and IoT.
+            </p>
+          </li>
+          <li
+            class="bg-slate-700/50 p-6 rounded-xl shadow-md hover:bg-slate-600 transition"
+          >
+            <h3 class="font-bold text-lg">
+              Coding Camp by DBS Foundation (2025)
+            </h3>
+            <p class="text-slate-400">
+              Machine Learning Cohort – Hands-on projects in AI, data
+              processing, and intelligent systems.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Skills Carousel -->
+      <h2 class="text-4xl font-semibold mb-10">🛠 Skills</h2>
+      <div class="about-marquee py-6 mt-12 overflow-hidden">
+        <div class="about-marquee-inner flex gap-6" id="skills">
+          <!-- JS akan inject logo -->
+        </div>
+      </div>
+
+      <!-- Back Button -->
+      <div class="text-center mt-16">
+        <a
+          href="index.html#projects"
+          class="text-base bg-grad text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:opacity-90"
+        >
+          Explore
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  @reference tailwindcss/base;
+  @reference tailwindcss/components;
+  @reference tailwindcss/utilities;
+  .about-marquee {
+    @apply relative overflow-hidden w-full;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+  }
+
+  .about-marquee-inner {
+    @apply inline-flex items-center whitespace-nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<script>
+  const logos = [
+    "/logo/html.png",
+    "/logo/css-3.png",
+    "/logo/js.png",
+    "/logo/php.png",
+    "/logo/c.png",
+    "/logo/bootstrap5.png",
+    "/logo/Laravel.png",
+    "/logo/python.png",
+    "/logo/github-icon.png",
+    "/logo/colab.png",
+    "/logo/tailwind.png",
+    "/logo/c++.png",
+    "/logo/kotlin.png",
+    "/logo/tensorflow.png",
+    "/logo/keras.png",
+    "/logo/vs-code.png",
+    "/logo/mysql.png",
+    "/logo/arduino-IDE.png",
+    "/logo/c-sharp.png",
+    "/logo/java.png",
+  ];
+
+  const carousel = document.getElementById("skills");
+  if (carousel) {
+    for (let i = 0; i < 2; i++) {
+      logos.forEach((src) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Skill Logo";
+        carousel.appendChild(img);
+      });
+    }
+  }
+</script>

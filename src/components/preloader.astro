@@ -1,0 +1,52 @@
+<div
+  id="preloader"
+  class="flex justify-center items-center inset-0 vh-100 bg-slate-950"
+>
+  <dotlottie-wc
+    src="https://lottie.host/1a568e30-c2b0-438f-a6bc-59901e7e8a41/9k04LfYRiP.lottie"
+    style="width: 500px; height: 500px"
+    speed="1"
+    autoplay
+    loop></dotlottie-wc>
+</div>
+
+<style>
+  @reference tailwindcss/base;
+  @reference tailwindcss/components;
+  @reference tailwindcss/utilities;
+  #preloader {
+    transition: opacity 0.6s ease;
+    @apply fixed z-[9999];
+  }
+
+  #preloader.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #mainContent {
+    opacity: 0;
+    @apply transition-opacity duration-1000 ease-linear;
+  }
+  #mainContent.show {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    const mainContent = document.getElementById("mainContent");
+    if (preloader && mainContent) {
+      setTimeout(() => {
+        preloader.classList.add("hide");
+
+        setTimeout(() => {
+          preloader.style.display = "none";
+          mainContent.classList.remove("d-none");
+          mainContent.classList.add("show");
+        }, 600);
+      }, 2000);
+    }
+  });
+</script>

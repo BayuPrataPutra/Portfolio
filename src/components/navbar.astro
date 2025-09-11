@@ -1,0 +1,136 @@
+<header
+  class="bg-transparent absolute md:fixed flex top-0 w-full left-0 items-center z-50"
+>
+  <div class="mx-auto w-full md:px-10">
+    <div class="flex items-center justify-between relative">
+      <div class="flex items-center px-4">
+        <a
+          href="#"
+          id="Logo"
+          class="font-bold block text-cyan-500 py-6 text-md md:text-xl transition-opacity duration-500"
+        >
+          Bayu Pratama Putra
+        </a>
+      </div>
+
+      <div class="flex items-center px-4">
+        <button id="hamburger" name="hamburger" class="block right-4 py-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            class="size-[4vh] stroke-slate-900 dark:stroke-slate-100"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+          </svg>
+        </button>
+
+        <nav
+          id="nav-menu"
+          class="hidden absolute py-5 bg-cyan-950 md:bg-transparent rounded-lg shadow-lg shadow-slate-500 max-w-[20vh] w-full right-4 top-full"
+        >
+          <ul class="font-semibold block">
+            <li class="group">
+              <a
+                href="#hero"
+                id="nav-item"
+                class="text-slate-700 dark:text-slate-100 py-2 mx-8 flex group-hover:text-cyan-500"
+                >Beranda</a
+              >
+            </li>
+            <li class="group">
+              <a
+                href="#about"
+                id="nav-item"
+                class="text-slate-700 dark:text-slate-100 py-2 mx-8 flex group-hover:text-cyan-500"
+                >About</a
+              >
+            </li>
+            <li class="group">
+              <a
+                href="#projects"
+                id="nav-item"
+                class="text-slate-700 dark:text-slate-100 py-2 mx-8 flex group-hover:text-cyan-500"
+                >My Project</a
+              >
+            </li>
+            <li class="group">
+              <a
+                href="#contact"
+                id="nav-item"
+                class="text-slate-700 dark:text-slate-100 py-2 mx-8 flex group-hover:text-cyan-500"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  @reference tailwindcss/base;
+  @reference tailwindcss/components;
+  @reference tailwindcss/utilities;
+
+  .navbar-fixed {
+    @apply fixed bg-transparent transition-opacity duration-1000 ease-linear shadow-[inset_0_-1px_0_0_rgba(0,0,0,0.2)] dark:shadow-[inset_0_-1px_0_0_rgba(255,255,255,0.2)];
+  }
+</style>
+
+<script>
+  const hamburger = document.querySelector("#hamburger");
+  const navmenu = document.querySelector("#nav-menu");
+
+  const hamburgerPath = "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5";
+  const closePath = "M6 18 18 6M6 6l12 12";
+
+  let isOpen = false;
+  if (hamburger && navmenu) {
+    const svg = hamburger.querySelector("svg");
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("hamburger-active");
+      isOpen = !isOpen;
+      navmenu.classList.toggle("hidden");
+
+      if (svg) {
+        if (isOpen) {
+          svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="${closePath}" />`;
+        } else {
+          svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="${hamburgerPath}" />`;
+        }
+      }
+    });
+  }
+
+  const scrollContainer = document.querySelector(".overflow-y-auto");
+  const logo = document.querySelector("#Logo");
+  if (scrollContainer && logo) {
+    scrollContainer.addEventListener("scroll", () => {
+      if (scrollContainer.scrollTop > 0) {
+        logo.classList.add("opacity-0");
+      } else {
+        logo.classList.remove("opacity-0");
+      }
+    });
+  }
+
+  document.querySelectorAll("#nav-item").forEach((link) => {
+    link.addEventListener("click", function (this: HTMLElement, e: Event) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const target = document.querySelector(targetId!);
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  });
+</script>
