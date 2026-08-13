@@ -1,46 +1,715 @@
+---
+interface LocalizedText {
+  en: string;
+  id: string;
+}
+
+interface Project {
+  title: string;
+  subtitle: LocalizedText;
+  description: LocalizedText;
+  date: LocalizedText;
+  image?: string;
+  imageAlt: LocalizedText;
+  technologies: string[];
+  github?: string;
+  featured?: boolean;
+}
+
+const projects: Project[] = [
+  {
+    title: "Hygipot",
+
+    subtitle: {
+      en: "IoT-Based Smart Plant Monitoring System",
+      id: "Sistem Monitoring Tanaman Pintar Berbasis IoT",
+    },
+
+    description: {
+      en:
+        "An IoT-based smart plant system integrating environmental monitoring, automated irrigation, MQTT-based remote control, and cloud-based plant disease detection.",
+
+      id:
+        "Sistem tanaman pintar berbasis IoT yang mengintegrasikan pemantauan kondisi lingkungan, penyiraman otomatis, kendali jarak jauh berbasis MQTT, serta deteksi penyakit tanaman berbasis cloud.",
+    },
+
+    date: {
+      en: "July 2026",
+      id: "Juli 2026",
+    },
+
+    image: "/img/bg-hygipot.png",
+
+    imageAlt: {
+      en: "Hygipot Smart Plant Monitoring System",
+      id: "Sistem Monitoring Tanaman Pintar Hygipot",
+    },
+
+    technologies: [
+      "ESP32-S3",
+      "MQTT",
+      "HiveMQ",
+      "Cloudinary",
+      "Roboflow",
+      "JavaScript",
+    ],
+
+    featured: true,
+  },
+
+  {
+    title: "Skinaria",
+
+    subtitle: {
+      en: "AI-Based Skin Disease Classification",
+      id: "Klasifikasi Penyakit Kulit Berbasis AI",
+    },
+
+    description: {
+      en:
+        "A machine learning-based web application for skin disease classification using image inputs, combining CNN-based prediction with a responsive web interface.",
+
+      id:
+        "Aplikasi web berbasis machine learning untuk mengklasifikasikan penyakit kulit melalui input citra, dengan menggabungkan prediksi berbasis CNN dan antarmuka web yang responsif.",
+    },
+
+    date: {
+      en: "June 2025",
+      id: "Juni 2025",
+    },
+
+    image: "/img/bg-skinaria.png",
+
+    imageAlt: {
+      en: "Skinaria Skin Disease Classification Project",
+      id: "Proyek Klasifikasi Penyakit Kulit Skinaria",
+    },
+
+    technologies: [
+      "Python",
+      "TensorFlow",
+      "Keras",
+      "Flask",
+      "Vue.js",
+      "PostgreSQL",
+    ],
+
+    github:
+      "https://github.com/BayuPrataPutra/Skinaria",
+  },
+
+  {
+    title: "Pocle",
+
+    subtitle: {
+      en: "Cycling Activity Tracking Application",
+      id: "Aplikasi Pelacakan Aktivitas Bersepeda",
+    },
+
+    description: {
+      en:
+        "A mobile application for real-time cycling activity tracking, route visualization, user authentication, activity history, and cycling statistics.",
+
+      id:
+        "Aplikasi mobile untuk melacak aktivitas bersepeda secara real-time, menampilkan rute perjalanan, autentikasi pengguna, riwayat aktivitas, dan statistik bersepeda.",
+    },
+
+    date: {
+      en: "May 2025",
+      id: "Mei 2025",
+    },
+
+    image: "/img/bg-pocle.png",
+
+    imageAlt: {
+      en: "Pocle Cycling Activity Tracking Application",
+      id: "Aplikasi Pelacakan Aktivitas Bersepeda Pocle",
+    },
+
+    technologies: [
+      "Kotlin",
+      "Android Studio",
+      "Firebase",
+      "Google Maps API",
+    ],
+
+    github:
+      "https://github.com/BayuPrataPutra/Pocle",
+  },
+
+  {
+    title: "Smart Home System",
+
+    subtitle: {
+      en: "IoT-Powered Home Automation",
+      id: "Otomasi Rumah Berbasis IoT",
+    },
+
+    description: {
+      en:
+        "An IoT-based home automation system using ESP32 for remote appliance control, real-time temperature monitoring, MQTT communication, and temperature-based automatic fan control.",
+
+      id:
+        "Sistem otomasi rumah berbasis IoT menggunakan ESP32 untuk mengendalikan perangkat dari jarak jauh, memantau suhu secara real-time, berkomunikasi melalui MQTT, dan mengatur kipas secara otomatis berdasarkan suhu.",
+    },
+
+    date: {
+      en: "December 2024",
+      id: "Desember 2024",
+    },
+
+    image: "/img/bg-smarthome.png",
+
+    imageAlt: {
+      en: "IoT Smart Home System Project",
+      id: "Proyek Smart Home System Berbasis IoT",
+    },
+
+    technologies: [
+      "ESP32",
+      "MQTT",
+      "Node-RED",
+      "Arduino IDE",
+    ],
+  },
+
+  {
+    title: "Velotto Auto Rent",
+
+    subtitle: {
+      en: "Web-Based Car Rental Management System",
+      id: "Sistem Manajemen Rental Mobil Berbasis Web",
+    },
+
+    description: {
+      en:
+        "A web-based car rental platform for managing cars, customers, and rental transactions through CRUD operations with a responsive and user-friendly interface.",
+
+      id:
+        "Platform rental mobil berbasis web untuk mengelola data kendaraan, pelanggan, dan transaksi penyewaan melalui operasi CRUD dengan antarmuka yang responsif dan mudah digunakan.",
+    },
+
+    date: {
+      en: "2024",
+      id: "2024",
+    },
+
+    image: "/img/bg-velotto.png",
+
+    imageAlt: {
+      en: "Velotto Auto Rent Website",
+      id: "Website Velotto Auto Rent",
+    },
+
+    technologies: [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Laravel",
+    ],
+
+    github:
+      "https://github.com/BayuPrataPutra/Velotto",
+  },
+
+  {
+    title: "Smart Door Lock System",
+
+    subtitle: {
+      en: "RFID-Based Access Control",
+      id: "Sistem Kontrol Akses Berbasis RFID",
+    },
+
+    description: {
+      en:
+        "An RFID-based smart security system using Arduino Uno and RC522 for authentication, with a servo motor for automatic door locking and unlocking.",
+
+      id:
+        "Sistem keamanan pintar berbasis RFID menggunakan Arduino Uno dan RC522 untuk autentikasi, serta motor servo untuk membuka dan mengunci pintu secara otomatis.",
+    },
+
+    date: {
+      en: "May 2023",
+      id: "Mei 2023",
+    },
+
+    image: "/img/bg-smartdoor.png",
+
+    imageAlt: {
+      en: "RFID Smart Door Lock System",
+      id: "Sistem Smart Door Lock Berbasis RFID",
+    },
+
+    technologies: [
+      "Arduino Uno",
+      "RC522 RFID",
+      "Servo Motor",
+      "Arduino IDE",
+    ],
+  },
+];
+---
+
 <section
   id="projects"
-  class="relative pt-20 md:pt-36 h-[100vh] lg:h-[100vh] md:h-[70vh] lg:pt-10 flex"
+  class="relative py-20 sm:py-24 lg:py-28"
 >
-  <div class="container font-outfit mx-auto">
-    <div class="flex flex-col lg:flex-row">
-      <!-- Project Text -->
-      <div class="w-full self-center px-4 lg:w-1/2 lg:-translate-y-16">
-        <h1 class="text-grad font-bold text-4xl lg:pb-10 lg:text-6xl py-5">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- ===================================================== -->
+    <!-- SECTION HEADER -->
+    <!-- ===================================================== -->
+
+    <div class="mb-14 max-w-3xl lg:mb-20">
+
+      <div class="mb-3 flex items-center gap-3">
+
+        <span
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400"
+          data-en="My Projects"
+          data-id="Proyek Saya"
+        >
           My Projects
-        </h1>
+        </span>
 
-        <p
-          class="text-sm font-medium text-justify text-slate-700 mb-10 lg:mb-20 lg:pt-3 lg:text-lg dark:text-slate-100"
-        >
-          Here are some of the projects I've worked on, showcasing my skills in
-          Machine Learning and IoT. Each project reflects my dedication to
-          learning and applying technology to solve real-world problems.
-        </p>
-
-        <a
-          href="/projects"
-          class="text-base bg-grad text-white font-semibold py-3 px-8 rounded-full hover:bg-cyan-800 transition-all duration-300 lg:text-lg lg:px-12"
-        >
-          View Projects
-        </a>
-      </div>
-
-      <!-- Project Image -->
-      <div
-        class="w-full self-center px-4 lg:w-1/2 lg:-translate-y-16 -translate-y-[45vh] md:-translate-y-[25vh] translate-x-16 opacity-40 lg:opacity-100 lg:translate-0 lg:z-0 -z-10"
-      >
         <div
-          class="flex justify-center pt-0 hover:scale-110 hover:-rotate-5 transition-all duration-500"
-        >
-          <dotlottie-wc
-            src="https://lottie.host/c5db41e6-cb1e-4ea5-8e27-e92f9649db58/xOgTqAisFt.lottie"
-            class="w-[700px] h-[700px]"
-            speed="1"
-            autoplay
-            loop></dotlottie-wc>
-        </div>
+          class="h-px w-12 bg-gradient-to-r from-cyan-500 to-transparent"
+        ></div>
+
       </div>
+
+
+      <h2
+        class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+      >
+        <span
+          data-en="Some things I've "
+          data-id="Beberapa hal yang telah saya "
+        >
+          Some things I've
+        </span>
+
+        <span
+          class="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent"
+          data-en="built."
+          data-id="bangun."
+        >
+          built.
+        </span>
+      </h2>
+
+
+      <p
+        class="mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8"
+        data-en="A collection of projects I've developed across Internet of Things, software development, machine learning, mobile applications, web technologies, and intelligent systems."
+        data-id="Kumpulan proyek yang telah saya kembangkan dalam bidang Internet of Things, pengembangan perangkat lunak, machine learning, aplikasi mobile, teknologi web, dan sistem cerdas."
+      >
+        A collection of projects I've developed across Internet of Things,
+        software development, machine learning, mobile applications, web
+        technologies, and intelligent systems.
+      </p>
+
     </div>
+
+
+    <!-- ===================================================== -->
+    <!-- PROJECT LIST -->
+    <!-- ===================================================== -->
+
+    <div class="space-y-16 lg:space-y-24">
+
+      {
+        projects.map((project, index) => {
+          const reversed =
+            index % 2 !== 0;
+
+          return (
+            <article
+              class="grid items-center gap-8 lg:grid-cols-2 lg:gap-16"
+            >
+
+              <!-- ================================================= -->
+              <!-- PROJECT IMAGE -->
+              <!-- ================================================= -->
+
+              <div
+                class:list={[
+                  "relative",
+                  reversed
+                    ? "lg:order-2"
+                    : "lg:order-1",
+                ]}
+              >
+
+                <!-- Background Glow -->
+                <div
+                  class:list={[
+                    "pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px]",
+
+                    index % 2 === 0
+                      ? "bg-cyan-500/10"
+                      : "bg-violet-500/10",
+                  ]}
+                  aria-hidden="true"
+                ></div>
+
+
+                <!-- Visual Card -->
+                <div
+                  class="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 shadow-2xl shadow-black/20"
+                >
+
+                  {
+                    project.image ? (
+                      <>
+                        <img
+                          src={project.image}
+                          alt={project.imageAlt.en}
+                          data-alt-en={project.imageAlt.en}
+                          data-alt-id={project.imageAlt.id}
+                          loading="lazy"
+                          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+
+                        <!-- Image Overlay -->
+                        <div
+                          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent"
+                        ></div>
+                      </>
+                    ) : (
+                      /* =========================================== */
+                      /* HYGIPOT PLACEHOLDER                         */
+                      /* =========================================== */
+
+                      <div
+                        class="relative flex h-full w-full items-center justify-center overflow-hidden"
+                      >
+
+                        <!-- Grid -->
+                        <div
+                          class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:28px_28px]"
+                        ></div>
+
+                        <!-- Glow -->
+                        <div
+                          class="absolute h-56 w-56 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 blur-[70px]"
+                        ></div>
+
+
+                        <!-- Icon -->
+                        <div
+                          class="relative z-10 flex flex-col items-center text-center"
+                        >
+
+                          <div
+                            class="mb-5 flex h-20 w-20 items-center justify-center rounded-2xl border border-cyan-500/20 bg-cyan-500/10 shadow-lg shadow-cyan-500/10"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.4"
+                              stroke="currentColor"
+                              class="h-10 w-10 text-cyan-400"
+                              aria-hidden="true"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 3c-4.5 0-7.5 3.25-7.5 7.5 0 4.147 3.353 7.5 7.5 7.5s7.5-3.353 7.5-7.5C19.5 6.25 16.5 3 12 3Z"
+                              />
+
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 18v3M9.5 21h5M8.5 10.5c1.5.5 2.75 1.75 3.5 3.5.75-1.75 2-3 3.5-3.5"
+                              />
+                            </svg>
+                          </div>
+
+
+                          <p
+                            class="text-xl font-bold text-white sm:text-2xl"
+                          >
+                            Hygipot
+                          </p>
+
+
+                          <p
+                            class="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-cyan-400"
+                          >
+                            IoT • Cloud • Computer Vision
+                          </p>
+
+                        </div>
+
+                      </div>
+                    )
+                  }
+
+
+                  <!-- Featured Label -->
+                  {
+                    project.featured && (
+                      <span
+                        class="absolute left-4 top-4 rounded-full border border-cyan-500/20 bg-slate-950/75 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-cyan-300 backdrop-blur-md"
+                        data-en="Undergraduate Thesis"
+                        data-id="Tugas Akhir"
+                      >
+                        Undergraduate Thesis
+                      </span>
+                    )
+                  }
+
+                </div>
+
+              </div>
+
+
+              <!-- ================================================= -->
+              <!-- PROJECT CONTENT -->
+              <!-- ================================================= -->
+
+              <div
+                class:list={[
+                  reversed
+                    ? "lg:order-1"
+                    : "lg:order-2",
+                ]}
+              >
+
+                <!-- Number & Date -->
+                <div
+                  class="mb-4 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.15em] text-slate-500"
+                >
+
+                  <span>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span
+                    class="h-px w-8 bg-slate-700"
+                  ></span>
+
+                  <span
+                    data-en={project.date.en}
+                    data-id={project.date.id}
+                  >
+                    {project.date.en}
+                  </span>
+
+                </div>
+
+
+                <!-- Project Name -->
+                <h3
+                  class="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+                >
+                  {project.title}
+                </h3>
+
+
+                <!-- Project Type -->
+                <p
+                  class:list={[
+                    "mt-2 text-sm font-semibold sm:text-base",
+
+                    index % 2 === 0
+                      ? "text-cyan-300"
+                      : "text-violet-300",
+                  ]}
+                  data-en={project.subtitle.en}
+                  data-id={project.subtitle.id}
+                >
+                  {project.subtitle.en}
+                </p>
+
+
+                <!-- Description -->
+                <p
+                  class="mt-5 max-w-xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8"
+                  data-en={project.description.en}
+                  data-id={project.description.id}
+                >
+                  {project.description.en}
+                </p>
+
+
+                <!-- Technologies -->
+                <div
+                  class="mt-6 flex flex-wrap gap-2"
+                >
+                  {
+                    project.technologies.map(
+                      (technology) => (
+                        <span
+                          class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors duration-300 hover:border-cyan-500/20 hover:text-slate-200"
+                        >
+                          {technology}
+                        </span>
+                      )
+                    )
+                  }
+                </div>
+
+
+                <!-- GitHub -->
+                {
+                  project.github && (
+                    <div class="mt-7">
+
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group inline-flex items-center gap-2 text-sm font-semibold text-slate-300 transition-colors duration-300 hover:text-cyan-400"
+                      >
+
+                        <!-- GitHub Icon -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="h-5 w-5"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 .75a11.25 11.25 0 0 0-3.556 21.922c.562.104.768-.244.768-.541 0-.268-.01-1.154-.015-2.09-3.125.68-3.785-1.326-3.785-1.326-.511-1.3-1.249-1.646-1.249-1.646-1.02-.697.077-.683.077-.683 1.128.08 1.722 1.158 1.722 1.158 1.003 1.718 2.63 1.222 3.272.934.102-.726.393-1.222.714-1.503-2.495-.284-5.12-1.248-5.12-5.557 0-1.228.439-2.232 1.158-3.019-.116-.284-.502-1.428.11-2.977 0 0 .944-.302 3.093 1.153A10.743 10.743 0 0 1 12 6.246c.956.004 1.919.129 2.817.379 2.147-1.455 3.09-1.153 3.09-1.153.613 1.549.227 2.693.111 2.977.72.787 1.157 1.791 1.157 3.019 0 4.32-2.63 5.27-5.133 5.548.403.347.762 1.03.762 2.076 0 1.5-.014 2.708-.014 3.076 0 .3.203.65.773.54A11.25 11.25 0 0 0 12 .75Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+
+
+                        <span
+                          data-en="View Repository"
+                          data-id="Lihat Repository"
+                        >
+                          View Repository
+                        </span>
+
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.8"
+                          stroke="currentColor"
+                          class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                          />
+                        </svg>
+
+                      </a>
+
+                    </div>
+                  )
+                }
+
+              </div>
+
+            </article>
+          );
+        })
+      }
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- GITHUB CTA -->
+    <!-- ===================================================== -->
+
+    <div
+      class="mt-20 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-10 text-center sm:px-10 sm:py-12"
+    >
+
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400"
+        data-en="More Projects"
+        data-id="Proyek Lainnya"
+      >
+        More Projects
+      </p>
+
+
+      <h3
+        class="mt-3 text-xl font-bold text-white sm:text-2xl"
+        data-en="Explore more of my work on GitHub."
+        data-id="Lihat lebih banyak karya saya di GitHub."
+      >
+        Explore more of my work on GitHub.
+      </h3>
+
+
+      <p
+        class="mx-auto mt-3 max-w-xl text-sm leading-7 text-slate-400"
+        data-en="Visit my GitHub profile to explore repositories, experiments, academic projects, and other things I've worked on."
+        data-id="Kunjungi profil GitHub saya untuk melihat repository, eksperimen, proyek akademik, dan berbagai hal lain yang pernah saya kerjakan."
+      >
+        Visit my GitHub profile to explore repositories, experiments,
+        academic projects, and other things I've worked on.
+      </p>
+
+
+      <a
+        href="https://github.com/BayuPrataPutra"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/30 hover:bg-white/10 hover:text-cyan-300"
+      >
+
+        <!-- GitHub -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 .75a11.25 11.25 0 0 0-3.556 21.922c.562.104.768-.244.768-.541 0-.268-.01-1.154-.015-2.09-3.125.68-3.785-1.326-3.785-1.326-.511-1.3-1.249-1.646-1.249-1.646-1.02-.697.077-.683.077-.683 1.128.08 1.722 1.158 1.722 1.158 1.003 1.718 2.63 1.222 3.272.934.102-.726.393-1.222.714-1.503-2.495-.284-5.12-1.248-5.12-5.557 0-1.228.439-2.232 1.158-3.019-.116-.284-.502-1.428.11-2.977 0 0 .944-.302 3.093 1.153A10.743 10.743 0 0 1 12 6.246c.956.004 1.919.129 2.817.379 2.147-1.455 3.09-1.153 3.09-1.153.613 1.549.227 2.693.111 2.977.72.787 1.157 1.791 1.157 3.019 0 4.32-2.63 5.27-5.133 5.548.403.347.762 1.03.762 2.076 0 1.5-.014 2.708-.014 3.076 0 .3.203.65.773.54A11.25 11.25 0 0 0 12 .75Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+
+        <span
+          data-en="Visit My GitHub"
+          data-id="Kunjungi GitHub Saya"
+        >
+          Visit My GitHub
+        </span>
+
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.8"
+          stroke="currentColor"
+          class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+          />
+        </svg>
+
+      </a>
+
+    </div>
+
   </div>
 </section>

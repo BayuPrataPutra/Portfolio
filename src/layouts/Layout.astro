@@ -1,104 +1,388 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title =
+    "Bayu Pratama Putra | Informatics Engineering Portfolio",
+
+  description =
+    "Portfolio of Bayu Pratama Putra, an Informatics Engineering graduate focused on IoT, software development, cloud technologies, machine learning, and intelligent systems.",
+
+  /*
+   * Sementara menggunakan pasfoto yang
+   * memang sudah ada di project.
+   *
+   * Nanti lebih bagus diganti dengan
+   * image khusus 1200x630.
+   */
+  image = "/img/pasfoto.png",
+} = Astro.props;
+
+
+/* ========================================================= */
+/* CANONICAL URL                                             */
+/* ========================================================= */
+
+/*
+ * Astro.site akan digunakan jika kamu
+ * sudah mengatur "site" di astro.config.
+ */
+
+const baseURL =
+  Astro.site ??
+  Astro.url.origin;
+
+
+const canonicalURL =
+  new URL(
+    Astro.url.pathname,
+    baseURL
+  );
+
+
+/* ========================================================= */
+/* SOCIAL IMAGE                                              */
+/* ========================================================= */
+
+const socialImageURL =
+  new URL(
+    image,
+    baseURL
+  );
+
+
+/* ========================================================= */
+/* STRUCTURED DATA                                           */
+/* ========================================================= */
+
+const personSchema = {
+  "@context":
+    "https://schema.org",
+
+  "@type":
+    "Person",
+
+  name:
+    "Bayu Pratama Putra",
+
+  url:
+    canonicalURL.href,
+
+  image:
+    socialImageURL.href,
+
+  jobTitle:
+    "Informatics Engineering Graduate",
+
+  alumniOf: {
+    "@type":
+      "CollegeOrUniversity",
+
+    name:
+      "Widyatama University",
+  },
+
+  address: {
+    "@type":
+      "PostalAddress",
+
+    addressLocality:
+      "Bandung",
+
+    addressCountry:
+      "ID",
+  },
+
+  sameAs: [
+    "https://github.com/BayuPrataPutra",
+    "https://www.linkedin.com/in/bayupratamap",
+  ],
+
+  knowsAbout: [
+    "Internet of Things",
+    "Software Development",
+    "Cloud Computing",
+    "Machine Learning",
+    "Computer Vision",
+    "Embedded Systems",
+  ],
+};
+
+
+const websiteSchema = {
+  "@context":
+    "https://schema.org",
+
+  "@type":
+    "WebSite",
+
+  name:
+    "Bayu Pratama Putra Portfolio",
+
+  url:
+    canonicalURL.href,
+
+  description:
+    description,
+
+  author: {
+    "@type":
+      "Person",
+
+    name:
+      "Bayu Pratama Putra",
+  },
+};
+---
+
 <!doctype html>
+
 <html lang="en">
+
   <head>
+
+    <!-- ===================================================== -->
+    <!-- BASIC META -->
+    <!-- ===================================================== -->
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Bayu Pratama Putra</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- TITLE -->
+    <!-- ===================================================== -->
+
+    <title>
+      {title}
+    </title>
+
+
+    <!-- ===================================================== -->
+    <!-- DESCRIPTION -->
+    <!-- ===================================================== -->
+
+    <meta
+      name="description"
+      content={description}
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- AUTHOR -->
+    <!-- ===================================================== -->
+
+    <meta
+      name="author"
+      content="Bayu Pratama Putra"
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- ROBOTS -->
+    <!-- ===================================================== -->
+
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- THEME -->
+    <!-- ===================================================== -->
+
+    <meta
+      name="theme-color"
+      content="#020617"
+    />
+
+    <meta
+      name="color-scheme"
+      content="dark"
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- CANONICAL -->
+    <!-- ===================================================== -->
+
+    <link
+      rel="canonical"
+      href={canonicalURL}
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- SITEMAP -->
+    <!-- ===================================================== -->
+
+    <link
+      rel="sitemap"
+      href="/sitemap-index.xml"
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- OPEN GRAPH -->
+    <!-- ===================================================== -->
+
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:site_name"
+      content="Bayu Pratama Putra"
+    />
+
+    <meta
+      property="og:title"
+      content={title}
+    />
+
+    <meta
+      property="og:description"
+      content={description}
+    />
+
+    <meta
+      property="og:url"
+      content={canonicalURL}
+    />
+
+    <meta
+      property="og:image"
+      content={socialImageURL}
+    />
+
+    <meta
+      property="og:image:alt"
+      content="Bayu Pratama Putra Portfolio"
+    />
+
+    <meta
+      property="og:locale"
+      content="en_US"
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- TWITTER / X CARD -->
+    <!-- ===================================================== -->
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content={title}
+    />
+
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+
+    <meta
+      name="twitter:image"
+      content={socialImageURL}
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Bayu Pratama Putra Portfolio"
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- STRUCTURED DATA - PERSON -->
+    <!-- ===================================================== -->
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(personSchema)}
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- STRUCTURED DATA - WEBSITE -->
+    <!-- ===================================================== -->
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(websiteSchema)}
+    />
+
   </head>
+
+
   <body
-    class="h-screen w-screen relative bg-slate-950 overflow-x-hidden scroll-smooth selection:bg-cyan-500 selection:text-white"
+    class="relative min-h-screen w-full overflow-x-hidden bg-slate-950 text-slate-100 selection:bg-cyan-500 selection:text-white"
   >
-    <!-- Background Glow & Grid -->
-    <div class="fixed inset-0 -z-10 pointer-events-none">
+
+    <!-- ===================================================== -->
+    <!-- BACKGROUND -->
+    <!-- ===================================================== -->
+
+    <div
+      class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+      aria-hidden="true"
+    >
+
+      <!-- Grid -->
       <div
-        class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"
-      >
-      </div>
+        class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:40px_40px]"
+      ></div>
+
+
+      <!-- Top Right Glow -->
       <div
-        class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600 rounded-full blur-[150px] opacity-40"
-      >
-      </div>
+        class="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-purple-600/20 blur-[150px]"
+      ></div>
+
+
+      <!-- Bottom Left Glow -->
       <div
-        class="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-600 rounded-full blur-[150px] opacity-40"
-      >
-      </div>
+        class="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-cyan-600/10 blur-[150px]"
+      ></div>
+
+
+      <!-- Center Glow -->
+      <div
+        class="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/5 blur-[160px]"
+      ></div>
+
     </div>
 
-    <!-- kursor partikel -->
-    <div id="color1" class="kursor fixed bg-pink-300 opacity-0"></div>
-    <div id="color2" class="kursor fixed bg-yellow-300 opacity-0"></div>
-    <div id="color3" class="kursor fixed bg-cyan-300 opacity-0"></div>
+
+    <!-- ===================================================== -->
+    <!-- PAGE CONTENT -->
+    <!-- ===================================================== -->
+
     <slot />
 
-    <script>
-      /* KURSOR */
-      const kursor = [
-        document.getElementById("color1")!,
-        document.getElementById("color2")!,
-        document.getElementById("color3")!,
-      ];
 
-      const radius = 100;
-      let angle = [0, 120, 240];
-      let cursor = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-      let cursorVisible = false;
+    <!-- ===================================================== -->
+    <!-- LOTTIE -->
+    <!-- ===================================================== -->
 
-      // ketika kursor bergerak
-      document.addEventListener("mousemove", (e) => {
-        cursor.x = e.clientX;
-        cursor.y = e.clientY;
-        if (!cursorVisible) {
-          kursor.forEach((h) => {
-            if (h) h.style.opacity = "0.15";
-          });
-          cursorVisible = true;
-        }
-      });
-
-      // ketika kursor keluar viewport
-      document.addEventListener("mouseout", (e) => {
-        if (!e.relatedTarget) {
-          kursor.forEach((h) => {
-            if (h) h.style.opacity = "0";
-          });
-          cursorVisible = false;
-        }
-      });
-
-      function animate() {
-        if (cursorVisible) {
-          for (let i = 0; i < kursor.length; i++) {
-            angle[i] += 0.8;
-            const rad = (angle[i] * Math.PI) / 180;
-            const x = cursor.x + radius * Math.cos(rad) - 15;
-            const y = cursor.y + radius * Math.sin(rad) - 15;
-            kursor[i].style.transform = `translate(${x}px, ${y}px)`;
-          }
-        }
-        requestAnimationFrame(animate);
-      }
-
-      animate();
-    </script>
     <script
       src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
-      type="module"></script>
-  </body>
-</html>
+      type="module"
+    ></script>
 
-<style>
-  @reference tailwindcss/base;
-  @reference tailwindcss/components;
-  @reference tailwindcss/utilities;
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .kursor {
-    transition: opacity 0.3s;
-    filter: blur(56px);
-    @apply pointer-events-none rounded-full opacity-0 h-[400px] w-[400px];
-  }
-</style>
+  </body>
+
+</html>

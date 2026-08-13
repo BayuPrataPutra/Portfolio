@@ -1,176 +1,736 @@
-<footer
+---
+const currentYear = new Date().getFullYear();
+---
+
+<section
   id="contact"
-  class="relative bg-slate-900 text-slate-200 pt-16 pb-10 mt-20 border-t border-slate-700 h-auto"
+  class="relative overflow-hidden border-t border-white/10 py-20 sm:py-24 lg:py-28"
 >
-  <div class="container mx-auto px-6 md:px-12 lg:px-20 font-outfit">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
-      <!-- Contact Info -->
-      <div>
-        <h2 class="text-3xl font-bold text-grad flex">
-          Get in Touch
-          <span class="inline-flex invisible lg:visible">
-            <dotlottie-wc
-              src="https://lottie.host/73b4b894-41b0-49d7-8d80-eea0971ef2a4/kiRYlnzMjW.lottie"
-              style="width: 50px; height: 50px"
-              class="pb-2 mx-2"
-              speed="1"
-              autoplay
-              loop></dotlottie-wc>
-          </span>
-        </h2>
-        <p class="text-slate-400 mb-6">
-          Feel free to reach out for collaborations, project discussions, or
-          just to say hi!
-        </p>
-        <h1 class="text-xl font-bold text-slate-50 mb-3">Bayu Pratama Putra</h1>
-        <ul class="space-y-3">
-          <li class="flex items-center space-x-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-cyan-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              ></path>
-            </svg>
+  <!-- ======================================================= -->
+  <!-- BACKGROUND GLOW -->
+  <!-- ======================================================= -->
+
+  <div
+    class="pointer-events-none absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-cyan-500/10 blur-[140px]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute -right-40 top-10 h-[400px] w-[400px] rounded-full bg-violet-500/10 blur-[140px]"
+    aria-hidden="true"
+  ></div>
+
+
+  <div
+    class="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8"
+  >
+
+    <!-- ===================================================== -->
+    <!-- SECTION HEADER -->
+    <!-- ===================================================== -->
+
+    <div class="mb-12 max-w-3xl">
+
+      <div class="mb-3 flex items-center gap-3">
+
+        <span
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400"
+          data-en="Contact"
+          data-id="Kontak"
+        >
+          Contact
+        </span>
+
+        <div
+          class="h-px w-12 bg-gradient-to-r from-cyan-500 to-transparent"
+        ></div>
+
+      </div>
+
+
+      <h2
+        class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+      >
+        <span
+          data-en="Let's build something "
+          data-id="Mari membangun sesuatu "
+        >
+          Let's build something
+        </span>
+
+        <span
+          class="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent"
+          data-en="together."
+          data-id="bersama."
+        >
+          together.
+        </span>
+      </h2>
+
+
+      <p
+        class="mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8"
+        data-en="I'm open to new opportunities, collaborations, and conversations about technology. Feel free to reach out if you'd like to connect or discuss a project."
+        data-id="Saya terbuka terhadap peluang baru, kolaborasi, dan diskusi seputar teknologi. Jangan ragu untuk menghubungi saya jika Anda ingin terhubung atau mendiskusikan suatu proyek."
+      >
+        I'm open to new opportunities, collaborations, and conversations
+        about technology. Feel free to reach out if you'd like to connect
+        or discuss a project.
+      </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- CONTACT GRID -->
+    <!-- ===================================================== -->
+
+    <div
+      class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8"
+    >
+
+      <!-- =================================================== -->
+      <!-- CONTACT INFORMATION -->
+      <!-- =================================================== -->
+
+      <div
+        class="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 p-6 sm:p-8"
+      >
+
+        <div
+          class="pointer-events-none absolute -left-20 -top-20 h-52 w-52 rounded-full bg-cyan-500/10 blur-[90px]"
+          aria-hidden="true"
+        ></div>
+
+
+        <div class="relative">
+
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500"
+            data-en="Get in touch"
+            data-id="Hubungi Saya"
+          >
+            Get in touch
+          </p>
+
+
+          <h3
+            class="mt-3 text-2xl font-bold text-white"
+          >
+            Bayu Pratama Putra
+          </h3>
+
+
+          <p
+            class="mt-3 max-w-md text-sm leading-7 text-slate-400"
+            data-en="The easiest way to reach me is through email or LinkedIn. You can also explore my work and repositories on GitHub."
+            data-id="Cara termudah untuk menghubungi saya adalah melalui email atau LinkedIn. Anda juga dapat melihat berbagai proyek dan repository saya melalui GitHub."
+          >
+            The easiest way to reach me is through email or LinkedIn.
+            You can also explore my work and repositories on GitHub.
+          </p>
+
+
+          <!-- ================================================= -->
+          <!-- CONTACT LINKS -->
+          <!-- ================================================= -->
+
+          <div class="mt-8 space-y-3">
+
+            <!-- ================================================= -->
+            <!-- EMAIL -->
+            <!-- ================================================= -->
+
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=bayuprataputra@gmail.com"
-              class="hover:text-cyan-400 transition">bayuprataputra@gmail.com</a
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-all duration-300 hover:border-cyan-500/30 hover:bg-white/[0.06]"
             >
-          </li>
-          <li class="flex items-center space-x-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-cyan-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M2 8.5A2.5 2.5 0 014.5 6h15A2.5 2.5 0 0122 8.5v7a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 15.5v-7z"
-              ></path>
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M6 10h.01M10 10h8m-8 4h8"></path>
-            </svg>
+
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-cyan-500/20 bg-cyan-500/10"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.6"
+                  stroke="currentColor"
+                  class="h-5 w-5 text-cyan-400"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5A2.25 2.25 0 0 1 19.5 19.5h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0-8.69 5.793a2.25 2.25 0 0 1-2.496 0L2.25 6.75"
+                  />
+                </svg>
+              </div>
+
+
+              <div class="min-w-0">
+
+                <p
+                  class="text-xs font-medium uppercase tracking-wider text-slate-500"
+                >
+                  Email
+                </p>
+
+                <p
+                  class="mt-1 truncate text-sm font-medium text-slate-200 transition-colors duration-300 group-hover:text-cyan-300"
+                >
+                  bayuprataputra@gmail.com
+                </p>
+
+              </div>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- LINKEDIN -->
+            <!-- ================================================= -->
+
             <a
               href="https://linkedin.com/in/bayupratamap"
               target="_blank"
-              class="hover:text-cyan-400 transition">LinkedIn</a
+              rel="noopener noreferrer"
+              class="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-all duration-300 hover:border-violet-500/30 hover:bg-white/[0.06]"
             >
-          </li>
-          <li class="flex items-center space-x-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-cyan-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M17.25 6.75L6.75 17.25M6.75 6.75l10.5 10.5"></path>
-            </svg>
+
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-violet-500/20 bg-violet-500/10"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="h-5 w-5 text-violet-400"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.047c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452Z"
+                  />
+                </svg>
+              </div>
+
+
+              <div>
+
+                <p
+                  class="text-xs font-medium uppercase tracking-wider text-slate-500"
+                >
+                  LinkedIn
+                </p>
+
+                <p
+                  class="mt-1 text-sm font-medium text-slate-200 transition-colors duration-300 group-hover:text-violet-300"
+                >
+                  linkedin.com/in/bayupratamap
+                </p>
+
+              </div>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- GITHUB -->
+            <!-- ================================================= -->
+
             <a
               href="https://github.com/BayuPrataPutra"
               target="_blank"
-              class="hover:text-cyan-400 transition">GitHub</a
+              rel="noopener noreferrer"
+              class="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-all duration-300 hover:border-cyan-500/30 hover:bg-white/[0.06]"
             >
-          </li>
-        </ul>
-        <div class="mt-6">
-          <a
-            href="/files/Eng CV_BayuPratamaPutra_085724310883.pdf"
-            download="CV_BayuPratamaPutra.pdf"
-            class="inline-block bg-grad text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:opacity-90 transition"
-          >
-            Download CV
-          </a>
+
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-cyan-500/20 bg-cyan-500/10"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="h-5 w-5 text-cyan-400"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 .75a11.25 11.25 0 0 0-3.556 21.922c.562.104.768-.244.768-.541 0-.268-.01-1.154-.015-2.09-3.125.68-3.785-1.326-3.785-1.326-.511-1.3-1.249-1.646-1.249-1.646-1.02-.697.077-.683.077-.683 1.128.08 1.722 1.158 1.722 1.158 1.003 1.718 2.63 1.222 3.272.934.102-.726.393-1.222.714-1.503-2.495-.284-5.12-1.248-5.12-5.557 0-1.228.439-2.232 1.158-3.019-.116-.284-.502-1.428.11-2.977 0 0 .944-.302 3.093 1.153A10.743 10.743 0 0 1 12 6.246c.956.004 1.919.129 2.817.379 2.147-1.455 3.09-1.153 3.09-1.153.613 1.549.227 2.693.111 2.977.72.787 1.157 1.791 1.157 3.019 0 4.32-2.63 5.27-5.133 5.548.403.347.762 1.03.762 2.076 0 1.5-.014 2.708-.014 3.076 0 .3.203.65.773.54A11.25 11.25 0 0 0 12 .75Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+
+
+              <div>
+
+                <p
+                  class="text-xs font-medium uppercase tracking-wider text-slate-500"
+                >
+                  GitHub
+                </p>
+
+                <p
+                  class="mt-1 text-sm font-medium text-slate-200 transition-colors duration-300 group-hover:text-cyan-300"
+                >
+                  github.com/BayuPrataPutra
+                </p>
+
+              </div>
+
+            </a>
+
+          </div>
+
+
+          <!-- ================================================= -->
+          <!-- DOWNLOAD CV -->
+          <!-- ================================================= -->
+
+          <div class="mt-7">
+
+            <a
+              href="/files/Bayu Pratama Putra.pdf"
+              download="Bayu Pratama Putra.pdf"
+              class="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-cyan-500/20"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.8"
+                stroke="currentColor"
+                class="h-4 w-4"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M7.5 10.5 12 15m0 0 4.5-4.5M12 15V3"
+                />
+              </svg>
+
+
+              <span
+                data-en="Download CV"
+                data-id="Unduh CV"
+              >
+                Download CV
+              </span>
+
+            </a>
+
+          </div>
+
         </div>
+
       </div>
 
-      <!-- Contact Form -->
-      <div>
-        <h2 class="text-3xl font-bold text-grad mb-4">Send a Message</h2>
-        <form id="contactForm" class="space-y-4">
-          <input
-            type="text"
-            id="name"
-            placeholder="Your Name"
-            class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-          />
-          <input
-            type="text"
-            id="subject"
-            placeholder="Subject"
-            class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            required
-          />
-          <textarea
-            id="message"
-            placeholder="Your Message"
-            rows="4"
-            class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            required></textarea>
-          <button
-            type="submit"
-            class="bg-grad text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:opacity-90 transition"
+
+      <!-- =================================================== -->
+      <!-- CONTACT FORM -->
+      <!-- =================================================== -->
+
+      <div
+        class="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 p-6 sm:p-8"
+      >
+
+        <div
+          class="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-violet-500/10 blur-[90px]"
+          aria-hidden="true"
+        ></div>
+
+
+        <div class="relative">
+
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500"
+            data-en="Send a message"
+            data-id="Kirim Pesan"
           >
-            Send Message
-          </button>
-        </form>
+            Send a message
+          </p>
+
+
+          <h3
+            class="mt-3 text-2xl font-bold text-white"
+            data-en="Have something in mind?"
+            data-id="Ada sesuatu yang ingin dibicarakan?"
+          >
+            Have something in mind?
+          </h3>
+
+
+          <p
+            class="mt-3 text-sm leading-7 text-slate-400"
+            data-en="Fill out the form below and Gmail will open with your message ready to send."
+            data-id="Isi formulir di bawah ini dan Gmail akan terbuka dengan pesan yang sudah siap untuk dikirim."
+          >
+            Fill out the form below and Gmail will open with your
+            message ready to send.
+          </p>
+
+
+          <form
+            id="contactForm"
+            class="mt-8 space-y-5"
+          >
+
+            <!-- ================================================= -->
+            <!-- NAME -->
+            <!-- ================================================= -->
+
+            <div>
+
+              <label
+                for="name"
+                class="mb-2 block text-sm font-medium text-slate-300"
+                data-en="Name"
+                data-id="Nama"
+              >
+                Name
+              </label>
+
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                data-placeholder-en="Your name"
+                data-placeholder-id="Nama Anda"
+                autocomplete="name"
+                required
+                class="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-600 focus:border-cyan-500/50 focus:bg-white/[0.05] focus:ring-2 focus:ring-cyan-500/10"
+              />
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- SUBJECT -->
+            <!-- ================================================= -->
+
+            <div>
+
+              <label
+                for="subject"
+                class="mb-2 block text-sm font-medium text-slate-300"
+                data-en="Subject"
+                data-id="Subjek"
+              >
+                Subject
+              </label>
+
+
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What's this about?"
+                data-placeholder-en="What's this about?"
+                data-placeholder-id="Apa yang ingin Anda bicarakan?"
+                required
+                class="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-600 focus:border-cyan-500/50 focus:bg-white/[0.05] focus:ring-2 focus:ring-cyan-500/10"
+              />
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- MESSAGE -->
+            <!-- ================================================= -->
+
+            <div>
+
+              <label
+                for="message"
+                class="mb-2 block text-sm font-medium text-slate-300"
+                data-en="Message"
+                data-id="Pesan"
+              >
+                Message
+              </label>
+
+
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell me about your project, opportunity, or idea..."
+                data-placeholder-en="Tell me about your project, opportunity, or idea..."
+                data-placeholder-id="Ceritakan tentang proyek, peluang, atau ide Anda..."
+                required
+                class="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-white outline-none transition-all duration-300 placeholder:text-slate-600 focus:border-cyan-500/50 focus:bg-white/[0.05] focus:ring-2 focus:ring-cyan-500/10"
+              ></textarea>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- SUBMIT -->
+            <!-- ================================================= -->
+
+            <button
+              type="submit"
+              class="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-cyan-500/20 sm:w-auto"
+            >
+
+              <span
+                data-en="Send Message"
+                data-id="Kirim Pesan"
+              >
+                Send Message
+              </span>
+
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.8"
+                stroke="currentColor"
+                class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 12h12m-5-5 5 5-5 5"
+                />
+              </svg>
+
+            </button>
+
+          </form>
+
+        </div>
+
       </div>
+
     </div>
 
-    <!-- Footer Bottom -->
-    <div
-      class="text-center mt-14 border-t border-slate-700 pt-6 text-slate-500 text-sm"
+
+    <!-- ===================================================== -->
+    <!-- FOOTER -->
+    <!-- ===================================================== -->
+
+    <footer
+      class="mt-16 border-t border-white/10 pt-8"
     >
-      © 2025 Bayu Pratama Putra. All rights reserved.
-    </div>
+
+      <div
+        class="flex flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left"
+      >
+
+        <div>
+
+          <p
+            class="text-sm font-semibold text-slate-300"
+          >
+            Bayu Pratama Putra
+          </p>
+
+
+          <p
+            class="mt-1 text-xs text-slate-600"
+            data-en="Built with Astro & Tailwind CSS."
+            data-id="Dibangun dengan Astro & Tailwind CSS."
+          >
+            Built with Astro & Tailwind CSS.
+          </p>
+
+        </div>
+
+
+        <p class="text-xs text-slate-600">
+
+          <span>
+            © {currentYear} Bayu Pratama Putra.
+          </span>
+
+          <span
+            data-en="All rights reserved."
+            data-id="Seluruh hak cipta dilindungi."
+          >
+            All rights reserved.
+          </span>
+
+        </p>
+
+      </div>
+
+    </footer>
+
   </div>
-</footer>
+</section>
+
 
 <script>
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+  const contactForm =
+    document.getElementById(
+      "contactForm"
+    ) as HTMLFormElement | null;
 
-    const nameInput = document.getElementById("name") as HTMLInputElement;
-    const subjectInput = document.getElementById("subject") as HTMLInputElement;
-    const messageInput = document.getElementById(
-      "message"
-    ) as HTMLTextAreaElement;
 
-    const name = nameInput.value;
-    const subject = subjectInput.value;
-    const message = messageInput.value;
+  /* ========================================================= */
+  /* GET CURRENT LANGUAGE                                      */
+  /* ========================================================= */
 
-    const finalSubject = encodeURIComponent(
-      subject || "Message from Portfolio"
-    );
-    const body = encodeURIComponent(`Name: ${name}\n\nMessage:\n${message}`);
-    const emailTo = "bayuprataputra@gmail.com";
+  function getCurrentLanguage():
+    "en" | "id" {
 
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTo}&su=${finalSubject}&body=${body}`,
-      "_blank"
-    );
-  });
+    return document.documentElement.lang === "id"
+      ? "id"
+      : "en";
   }
 
+
+  /* ========================================================= */
+  /* CONTACT FORM SUBMIT                                       */
+  /* ========================================================= */
+
+  contactForm?.addEventListener(
+    "submit",
+    (event) => {
+
+      event.preventDefault();
+
+
+      const nameInput =
+        document.getElementById(
+          "name"
+        ) as HTMLInputElement | null;
+
+
+      const subjectInput =
+        document.getElementById(
+          "subject"
+        ) as HTMLInputElement | null;
+
+
+      const messageInput =
+        document.getElementById(
+          "message"
+        ) as HTMLTextAreaElement | null;
+
+
+      if (
+        !nameInput ||
+        !subjectInput ||
+        !messageInput
+      ) {
+        return;
+      }
+
+
+      const name =
+        nameInput.value.trim();
+
+
+      const subject =
+        subjectInput.value.trim();
+
+
+      const message =
+        messageInput.value.trim();
+
+
+      if (
+        !name ||
+        !subject ||
+        !message
+      ) {
+        return;
+      }
+
+
+      const email =
+        "bayuprataputra@gmail.com";
+
+
+      const language =
+        getCurrentLanguage();
+
+
+      /* ===================================================== */
+      /* EMAIL SUBJECT                                         */
+      /* ===================================================== */
+
+      const emailSubject =
+        encodeURIComponent(
+          subject
+        );
+
+
+      /* ===================================================== */
+      /* EMAIL BODY                                            */
+      /* ===================================================== */
+
+      let bodyText:
+        string;
+
+
+      /* INDONESIA */
+
+      if (
+        language === "id"
+      ) {
+
+        bodyText =
+`Halo Bayu,
+
+Nama saya ${name}.
+
+${message}
+
+Salam,
+${name}`;
+
+      }
+
+
+      /* ENGLISH */
+
+      else {
+
+        bodyText =
+`Hi Bayu,
+
+My name is ${name}.
+
+${message}
+
+Best regards,
+${name}`;
+
+      }
+
+
+      const emailBody =
+        encodeURIComponent(
+          bodyText
+        );
+
+
+      /* ===================================================== */
+      /* GMAIL URL                                             */
+      /* ===================================================== */
+
+      const gmailUrl =
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${emailSubject}&body=${emailBody}`;
+
+
+      window.open(
+        gmailUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+    }
+  );
 </script>

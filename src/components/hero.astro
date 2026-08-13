@@ -1,74 +1,385 @@
 <section
   id="hero"
-  class="relative pt-20 md:pt-36 h-[100vh] lg:h-[100vh] md:h-[80vh] lg:pt-10 flex"
+  class="relative overflow-hidden pt-20"
 >
-  <div class="container font-outfit mx-auto">
-    <div class="flex flex-col lg:flex-row">
-      <!-- Hero Text -->
-      <div class="w-full self-center px-4 lg:-translate-y-16 lg:w-1/2">
-        <h1
-          class="text-grad font-bold text-base pb-2 md:pb-5 lg:pb-10 md:text-3xl"
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div
+      class="grid items-center gap-10 py-12 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-2 lg:gap-16 lg:py-0"
+    >
+
+      <!-- ===================================================== -->
+      <!-- HERO CONTENT -->
+      <!-- ===================================================== -->
+
+      <div class="relative z-10 order-2 lg:order-1">
+
+        <!-- =================================================== -->
+        <!-- AVAILABILITY -->
+        <!-- =================================================== -->
+
+        <div
+          class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm"
         >
-          Hi everyone, my name is
+          <span class="relative flex h-2 w-2">
+
+            <span
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+            ></span>
+
+            <span
+              class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"
+            ></span>
+
+          </span>
+
           <span
-            class="block font-bold text-4xl md:text-5xl text-slate-900 lg:text-6xl md:pt-5 dark:text-slate-50"
+            class="text-xs font-medium text-slate-300 sm:text-sm"
+            data-en="Open to opportunities"
+            data-id="Terbuka untuk peluang"
           >
-            Bayu Pratama Putra
+            Open to opportunities
+          </span>
+        </div>
+
+
+        <!-- =================================================== -->
+        <!-- INTRODUCTION -->
+        <!-- =================================================== -->
+
+        <p
+          class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400 sm:text-base"
+          data-en="Hello, I'm"
+          data-id="Halo, saya"
+        >
+          Hello, I'm
+        </p>
+
+
+        <!-- =================================================== -->
+        <!-- NAME -->
+        <!-- =================================================== -->
+
+        <h1
+          class="mb-5 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
+        >
+          Bayu Pratama
+
+          <span
+            class="block bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent"
+          >
+            Putra
           </span>
         </h1>
+
+
+        <!-- =================================================== -->
+        <!-- POSITION -->
+        <!-- =================================================== -->
+
         <h2
-          class="font-semibold text-slate-400 text-base mb-10 md:mb-20 italic md:text-xl lg:text-2xl dark:text-slate-300"
+          class="mb-5 max-w-2xl text-xl font-semibold leading-relaxed text-slate-300 sm:text-2xl"
         >
-          Learning, Building, and Innovating in Machine Learning and IoT
+          <span
+            data-en="Informatics Engineering Graduate"
+            data-id="Lulusan Teknik Informatika"
+          >
+            Informatics Engineering Graduate
+          </span>
         </h2>
 
-        <a
-          href="#contact"
-          class="text-base bg-grad text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 md:text-2xl md:px-24"
+
+        <!-- =================================================== -->
+        <!-- DESCRIPTION -->
+        <!-- =================================================== -->
+
+        <p
+          class="mb-7 max-w-xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8"
         >
-          Contact Me
-        </a>
+          <span
+            data-en="Building connected and intelligent systems through "
+            data-id="Membangun sistem yang terhubung dan cerdas melalui "
+          >
+            Building connected and intelligent systems through
+          </span>
+
+          <span
+            class="font-medium text-slate-200"
+            data-en="IoT, software development, cloud technologies,"
+            data-id="IoT, pengembangan perangkat lunak, teknologi cloud,"
+          >
+            IoT, software development, cloud technologies,
+          </span>
+
+          <span
+            data-en=" and "
+            data-id=" dan "
+          >
+            and
+          </span>
+
+          <span
+            class="font-medium text-slate-200"
+            data-en="intelligent systems."
+            data-id="sistem cerdas."
+          >
+            intelligent systems.
+          </span>
+
+          <span
+            data-en=" Passionate about turning ideas and real-world problems into practical technology solutions."
+            data-id=" Saya memiliki ketertarikan untuk mengubah ide dan permasalahan nyata menjadi solusi teknologi yang praktis."
+          >
+            Passionate about turning ideas and real-world problems into
+            practical technology solutions.
+          </span>
+        </p>
+
+
+        <!-- =================================================== -->
+        <!-- FOCUS AREAS -->
+        <!-- =================================================== -->
+
+        <div class="mb-8 flex flex-wrap gap-2">
+
+          <!-- IoT -->
+          <span
+            class="rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3 py-1.5 text-xs font-medium text-cyan-300 sm:text-sm"
+          >
+            IoT
+          </span>
+
+
+          <!-- Software Development -->
+          <span
+            class="rounded-full border border-violet-500/20 bg-violet-500/5 px-3 py-1.5 text-xs font-medium text-violet-300 sm:text-sm"
+            data-en="Software Development"
+            data-id="Pengembangan Perangkat Lunak"
+          >
+            Software Development
+          </span>
+
+
+          <!-- Cloud -->
+          <span
+            class="rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3 py-1.5 text-xs font-medium text-cyan-300 sm:text-sm"
+            data-en="Cloud"
+            data-id="Cloud"
+          >
+            Cloud
+          </span>
+
+
+          <!-- Machine Learning -->
+          <span
+            class="rounded-full border border-violet-500/20 bg-violet-500/5 px-3 py-1.5 text-xs font-medium text-violet-300 sm:text-sm"
+          >
+            Machine Learning
+          </span>
+
+        </div>
+
+
+        <!-- =================================================== -->
+        <!-- CTA -->
+        <!-- =================================================== -->
+
+        <div
+          class="flex flex-col gap-3 sm:flex-row sm:items-center"
+        >
+
+          <!-- Projects -->
+          <a
+            href="#projects"
+            class="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/20 sm:text-base"
+          >
+            <span
+              data-en="View My Work"
+              data-id="Lihat Proyek Saya"
+            >
+              View My Work
+            </span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.8"
+              stroke="currentColor"
+              class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </a>
+
+
+          <!-- Contact -->
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/40 hover:bg-white/10 hover:text-white sm:text-base"
+          >
+            <span
+              data-en="Contact Me"
+              data-id="Hubungi Saya"
+            >
+              Contact Me
+            </span>
+          </a>
+
+        </div>
+
+
+        <!-- =================================================== -->
+        <!-- SOCIAL LINKS -->
+        <!-- =================================================== -->
+
+        <div class="mt-8 flex items-center gap-5">
+
+          <span
+            class="text-xs font-medium uppercase tracking-widest text-slate-500"
+            data-en="Find me"
+            data-id="Temukan saya"
+          >
+            Find me
+          </span>
+
+          <div class="h-px w-8 bg-slate-700"></div>
+
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/BayuPrataPutra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            class="text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:text-cyan-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 .75a11.25 11.25 0 0 0-3.556 21.922c.562.104.768-.244.768-.541 0-.268-.01-1.154-.015-2.09-3.125.68-3.785-1.326-3.785-1.326-.511-1.3-1.249-1.646-1.249-1.646-1.02-.697.077-.683.077-.683 1.128.08 1.722 1.158 1.722 1.158 1.003 1.718 2.63 1.222 3.272.934.102-.726.393-1.222.714-1.503-2.495-.284-5.12-1.248-5.12-5.557 0-1.228.439-2.232 1.158-3.019-.116-.284-.502-1.428.11-2.977 0 0 .944-.302 3.093 1.153A10.743 10.743 0 0 1 12 6.246c.956.004 1.919.129 2.817.379 2.147-1.455 3.09-1.153 3.09-1.153.613 1.549.227 2.693.111 2.977.72.787 1.157 1.791 1.157 3.019 0 4.32-2.63 5.27-5.133 5.548.403.347.762 1.03.762 2.076 0 1.5-.014 2.708-.014 3.076 0 .3.203.65.773.54A11.25 11.25 0 0 0 12 .75Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+
+
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/bayupratamap"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:text-cyan-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.047c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126ZM7.119 20.452H3.555V9h3.564v11.452Z"
+              />
+            </svg>
+          </a>
+
+        </div>
+
       </div>
 
-      <!-- Hero Image -->
-      <div class="self-end lg:w-1/2 z-[-1] lg:z-0">
+
+      <!-- ===================================================== -->
+      <!-- HERO VISUAL -->
+      <!-- ===================================================== -->
+
+      <div
+        class="relative order-1 flex min-h-[280px] items-center justify-center sm:min-h-[360px] lg:order-2 lg:h-full lg:min-h-0"
+      >
+
+        <!-- Decorative Glow -->
         <div
-          class="mt-10 relative -translate-y-15 md:mt-0 md:-right-44 md:-translate-y-64 lg:translate-0 lg:right-0"
+          class="pointer-events-none absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 blur-[90px] sm:h-[340px] sm:w-[340px] lg:h-[420px] lg:w-[420px] xl:h-[460px] xl:w-[460px]"
+          aria-hidden="true"
+        ></div>
+
+
+        <!-- Decorative Circle -->
+        <div
+          class="pointer-events-none absolute left-1/2 top-1/2 h-[230px] w-[230px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:h-[310px] sm:w-[310px] lg:h-[390px] lg:w-[390px] xl:h-[430px] xl:w-[430px]"
+          aria-hidden="true"
+        ></div>
+
+
+        <!-- Extra Ring -->
+        <div
+          class="pointer-events-none absolute left-1/2 top-1/2 hidden h-[470px] w-[470px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.04] xl:block"
+          aria-hidden="true"
+        ></div>
+
+
+        <!-- Photo -->
+        <div
+          class="relative z-10 flex h-full w-full items-center justify-center"
         >
           <img
             src="/img/pasfoto.png"
-            alt="Bayu Pratama Putra"
-            class="md:scale-70 scale-90 lg:scale-100 [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [mask-repeat:no-repeat] [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [-webkit-mask-repeat:no-repeat] hover:saturate-150 transition-all duration-500"
+            alt="Portrait of Bayu Pratama Putra"
+            class="max-h-[300px] w-auto object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02] sm:max-h-[360px] lg:max-h-[68vh] xl:max-h-[72vh] [mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)]"
+            loading="eager"
           />
         </div>
+
       </div>
+
     </div>
 
-    <div id="scroll-icon" class="flex justify-center pt-0 invisible lg:visible">
-      <a href="#about" id="nav-item">
-        <dotlottie-wc
-          src="https://lottie.host/ade908b4-b95e-463c-8e68-62cf3bfa0211/AZvirigdId.lottie"
-          style="width: 100px; height: 100px"
-          speed="1"
-          autoplay
-          loop></dotlottie-wc>
-      </a>
-    </div>
+
+    <!-- ===================================================== -->
+    <!-- SCROLL INDICATOR -->
+    <!-- ===================================================== -->
+
+    <a
+      href="#about"
+      aria-label="Scroll to about section"
+      data-aria-en="Scroll to about section"
+      data-aria-id="Gulir ke bagian tentang saya"
+      class="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-slate-500 transition-colors hover:text-cyan-400 xl:flex"
+    >
+      <span
+        class="text-[10px] font-medium uppercase tracking-[0.25em]"
+        data-en="Scroll"
+        data-id="Gulir"
+      >
+        Scroll
+      </span>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-5 w-5 animate-bounce"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m4.5 5.25 7.5 7.5 7.5-7.5M4.5 11.25l7.5 7.5 7.5-7.5"
+        />
+      </svg>
+    </a>
+
   </div>
 </section>
-
-<script>
-  const scrollIconContainer = document.querySelector(".overflow-y-auto");
-  const scrollIcon = document.getElementById("scroll-icon");
-  if (scrollIconContainer && scrollIcon) {
-    scrollIconContainer.addEventListener("scroll", () => {
-    if (scrollIconContainer.scrollTop > 0) {
-      scrollIcon.classList.remove("lg:visible");
-      scrollIcon.classList.add("lg:invisible");
-    } else {
-      scrollIcon.classList.remove("lg:invisible");
-      scrollIcon.classList.add("lg:visible");
-    }
-  });
-  }  
-</script>

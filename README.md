@@ -1,46 +1,76 @@
-# Astro Starter Kit: Basics
+# Bayu Pratama Putra — Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Personal portfolio website built with **Astro** and **Tailwind CSS**, designed to showcase my profile, technical skills, selected projects, and contact information in a modern, responsive, and interactive interface.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🌐 **Live Website:** [bayupratamaputra.vercel.app](https://bayupratamaputra.vercel.app)
 
-## 🚀 Project Structure
+## ✨ Features
 
-Inside of your Astro project, you'll see the following folders and files:
+- Responsive single-page portfolio
+- English / Indonesian language switcher
+- Language preference saved with `localStorage`
+- Interactive navigation with smooth section highlighting
+- Cursor glow effect
+- Interactive Cursor Buddy with bilingual messages and easter eggs
+- Project showcase with technology stacks
+- Skills and professional skills sections
+- Contact form that opens Gmail with a pre-filled message
+- Downloadable CV
+- SEO-friendly metadata
+- Open Graph and Twitter Card metadata
+- JSON-LD structured data
+- Canonical URL
+- Sitemap generation with `@astrojs/sitemap`
+- `robots.txt`
+- Deployed on Vercel
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- TypeScript
+- JavaScript
+- HTML
+- CSS
+
+### Additional Tools
+
+- Lottie Web Component
+- Astro Sitemap
+- Vercel
+
+## 📂 Project Structure
 
 ```text
-/
+portfolio/
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+│   ├── files/
+│   ├── img/
+│   └── robots.txt
+│
+├── src/
+│   ├── components/
+│   │   ├── about.astro
+│   │   ├── contact.astro
+│   │   ├── cursorbuddy.astro
+│   │   ├── cursorglow.astro
+│   │   ├── hero.astro
+│   │   ├── languageswitcher.astro
+│   │   ├── navbar.astro
+│   │   ├── projects.astro
+│   │   └── skills.astro
+│   │
+│   ├── layouts/
+│   │   └── Layout.astro
+│   │
+│   ├── pages/
+│   │   └── index.astro
+│   │
+│   └── styles/
+│       └── global.css
+│
+├── astro.config.mjs
+├── package.json
+└── README.md

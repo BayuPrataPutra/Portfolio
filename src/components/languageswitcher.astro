@@ -1,0 +1,232 @@
+<div
+  class="flex items-center rounded-full border border-white/10 bg-white/[0.04] p-1"
+  aria-label="Language selector"
+>
+  <button
+    type="button"
+    data-language-button="id"
+    class="language-button rounded-full px-2.5 py-1 text-[11px] font-semibold text-slate-500 transition-all duration-300"
+    aria-label="Gunakan Bahasa Indonesia"
+  >
+    ID
+  </button>
+
+  <button
+    type="button"
+    data-language-button="en"
+    class="language-button rounded-full px-2.5 py-1 text-[11px] font-semibold text-slate-500 transition-all duration-300"
+    aria-label="Use English"
+  >
+    EN
+  </button>
+</div>
+
+
+<script>
+  type Language = "id" | "en";
+
+  const buttons =
+    document.querySelectorAll<HTMLButtonElement>(
+      "[data-language-button]"
+    );
+
+
+  function updateText(
+    language: Language
+  ) {
+    /*
+     * Normal text
+     */
+    document
+      .querySelectorAll<HTMLElement>(
+        "[data-en][data-id]"
+      )
+      .forEach((element) => {
+        const value =
+          language === "id"
+            ? element.dataset.id
+            : element.dataset.en;
+
+        if (value !== undefined) {
+          element.textContent = value;
+        }
+      });
+
+
+    /*
+     * Input / textarea placeholder
+     */
+    document
+      .querySelectorAll<
+        HTMLInputElement | HTMLTextAreaElement
+      >(
+        "[data-placeholder-en][data-placeholder-id]"
+      )
+      .forEach((element) => {
+        const value =
+          language === "id"
+            ? element.dataset.placeholderId
+            : element.dataset.placeholderEn;
+
+        if (value !== undefined) {
+          element.placeholder =
+            value;
+        }
+      });
+
+
+    /*
+     * aria-label
+     */
+    document
+      .querySelectorAll<HTMLElement>(
+        "[data-aria-en][data-aria-id]"
+      )
+      .forEach((element) => {
+        const value =
+          language === "id"
+            ? element.dataset.ariaId
+            : element.dataset.ariaEn;
+
+        if (value !== undefined) {
+          element.setAttribute(
+            "aria-label",
+            value
+          );
+        }
+      });
+  }
+
+
+  function updateButtons(
+    language: Language
+  ) {
+    buttons.forEach((button) => {
+      const buttonLanguage =
+        button.dataset.languageButton;
+
+      const active =
+        buttonLanguage ===
+        language;
+
+      button.classList.toggle(
+        "bg-gradient-to-r",
+        active
+      );
+
+      button.classList.toggle(
+        "from-cyan-500",
+        active
+      );
+
+      button.classList.toggle(
+        "to-violet-500",
+        active
+      );
+
+      button.classList.toggle(
+        "text-white",
+        active
+      );
+
+      button.classList.toggle(
+        "shadow-sm",
+        active
+      );
+
+      button.classList.toggle(
+        "text-slate-500",
+        !active
+      );
+
+      button.setAttribute(
+        "aria-pressed",
+        active.toString()
+      );
+    });
+  }
+
+
+  function setLanguage(
+    language: Language
+  ) {
+    document.documentElement.lang =
+      language;
+
+    document.documentElement.dataset.language =
+      language;
+
+    localStorage.setItem(
+      "portfolio-language",
+      language
+    );
+
+    updateText(
+      language
+    );
+
+    updateButtons(
+      language
+    );
+
+
+    /*
+     * Event ini bisa dipakai component lain
+     * seperti CursorBuddy.
+     */
+    window.dispatchEvent(
+      new CustomEvent(
+        "portfolio-language-change",
+        {
+          detail: {
+            language,
+          },
+        }
+      )
+    );
+  }
+
+
+  /*
+   * Gunakan language yang terakhir dipilih.
+   * Kalau belum pernah memilih:
+   * default website = English.
+   */
+
+  const savedLanguage =
+    localStorage.getItem(
+      "portfolio-language"
+    );
+
+  const initialLanguage:
+    Language =
+      savedLanguage === "id"
+        ? "id"
+        : "en";
+
+
+  setLanguage(
+    initialLanguage
+  );
+
+
+  buttons.forEach((button) => {
+    button.addEventListener(
+      "click",
+      () => {
+        const language =
+          button.dataset
+            .languageButton;
+
+        if (
+          language === "id" ||
+          language === "en"
+        ) {
+          setLanguage(
+            language
+          );
+        }
+      }
+    );
+  });
+</script>

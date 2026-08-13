@@ -1,136 +1,782 @@
+---
+import LanguageSwitcher from "./languageswitcher.astro";
+---
+
 <header
-  class="bg-transparent absolute md:fixed flex top-0 w-full left-0 items-center z-50"
+  id="navbar"
+  class="fixed left-0 top-0 z-50 w-full border-b border-transparent transition-all duration-300"
 >
-  <div class="mx-auto w-full md:px-10">
-    <div class="flex items-center justify-between relative">
-      <div class="flex items-center px-4">
-        <a
-          href="#"
-          id="Logo"
-          class="font-bold block text-cyan-500 py-6 text-md md:text-xl transition-opacity duration-500"
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="flex h-20 items-center justify-between">
+
+      <!-- ===================================================== -->
+      <!-- LOGO -->
+      <!-- ===================================================== -->
+
+      <a
+        href="#hero"
+        class="group flex shrink-0 items-center font-bold"
+        aria-label="Go to home"
+        data-aria-en="Go to home"
+        data-aria-id="Kembali ke beranda"
+      >
+        <span
+          class="text-base text-slate-100 transition-colors duration-300 group-hover:text-cyan-400 sm:text-lg lg:text-xl"
         >
           Bayu Pratama Putra
-        </a>
-      </div>
+        </span>
+      </a>
 
-      <div class="flex items-center px-4">
-        <button id="hamburger" name="hamburger" class="block right-4 py-6">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            class="size-[4vh] stroke-slate-900 dark:stroke-slate-100"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-          </svg>
-        </button>
 
-        <nav
-          id="nav-menu"
-          class="hidden absolute py-5 bg-cyan-950 md:bg-transparent rounded-lg shadow-lg shadow-slate-500 max-w-[20vh] w-full right-4 top-full"
+      <!-- ===================================================== -->
+      <!-- DESKTOP NAVIGATION -->
+      <!-- ===================================================== -->
+
+      <nav
+        class="hidden md:block"
+        aria-label="Main navigation"
+        data-aria-en="Main navigation"
+        data-aria-id="Navigasi utama"
+      >
+        <ul class="flex items-center gap-4 lg:gap-6">
+
+          <!-- Home -->
+          <li>
+            <a
+              href="#hero"
+              data-nav-link="hero"
+              class="nav-link text-sm font-medium text-slate-400 transition-colors duration-300 hover:text-cyan-400"
+            >
+              <span
+                data-en="Home"
+                data-id="Beranda"
+              >
+                Home
+              </span>
+            </a>
+          </li>
+
+
+          <!-- About -->
+          <li>
+            <a
+              href="#about"
+              data-nav-link="about"
+              class="nav-link text-sm font-medium text-slate-400 transition-colors duration-300 hover:text-cyan-400"
+            >
+              <span
+                data-en="About"
+                data-id="Tentang"
+              >
+                About
+              </span>
+            </a>
+          </li>
+
+
+          <!-- Projects -->
+          <li>
+            <a
+              href="#projects"
+              data-nav-link="projects"
+              class="nav-link text-sm font-medium text-slate-400 transition-colors duration-300 hover:text-cyan-400"
+            >
+              <span
+                data-en="Projects"
+                data-id="Proyek"
+              >
+                Projects
+              </span>
+            </a>
+          </li>
+
+
+          <!-- Skills -->
+          <li>
+            <a
+              href="#skills"
+              data-nav-link="skills"
+              class="nav-link text-sm font-medium text-slate-400 transition-colors duration-300 hover:text-cyan-400"
+            >
+              <span
+                data-en="Skills"
+                data-id="Keahlian"
+              >
+                Skills
+              </span>
+            </a>
+          </li>
+
+
+          <!-- Contact -->
+          <li>
+            <a
+              href="#contact"
+              data-nav-link="contact"
+              class="nav-link text-sm font-medium text-slate-400 transition-colors duration-300 hover:text-cyan-400"
+            >
+              <span
+                data-en="Contact"
+                data-id="Kontak"
+              >
+                Contact
+              </span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+
+      <!-- ===================================================== -->
+      <!-- DESKTOP ACTIONS -->
+      <!-- ===================================================== -->
+
+      <div class="hidden items-center gap-3 md:flex">
+
+        <!-- Language Switcher -->
+        <LanguageSwitcher />
+
+
+        <!-- Contact CTA -->
+        <a
+          href="#contact"
+          class="hidden items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/20 lg:inline-flex lg:px-5"
         >
-          <ul class="font-semibold block">
-            <li class="group">
-              <a
-                href="#hero"
-                id="nav-item"
-                class="text-slate-700 dark:text-slate-100 py-2 mx-8 flex group-hover:text-cyan-500"
-                >Beranda</a
-              >
-            </li>
-            <li class="group">
-              <a
-                href="#about"
-                id="nav-item"
-                class="text-slate-700 dark:text-slate-100 py-2 mx-8 flex group-hover:text-cyan-500"
-                >About</a
-              >
-            </li>
-            <li class="group">
-              <a
-                href="#projects"
-                id="nav-item"
-                class="text-slate-700 dark:text-slate-100 py-2 mx-8 flex group-hover:text-cyan-500"
-                >My Project</a
-              >
-            </li>
-            <li class="group">
-              <a
-                href="#contact"
-                id="nav-item"
-                class="text-slate-700 dark:text-slate-100 py-2 mx-8 flex group-hover:text-cyan-500"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
+          <span
+            data-en="Let's Connect"
+            data-id="Mari Terhubung"
+          >
+            Let's Connect
+          </span>
+        </a>
+
       </div>
+
+
+      <!-- ===================================================== -->
+      <!-- MOBILE MENU BUTTON -->
+      <!-- ===================================================== -->
+
+      <button
+        id="menu-button"
+        type="button"
+        class="relative flex h-10 w-10 items-center justify-center rounded-lg text-slate-100 transition-colors duration-300 hover:bg-white/5 md:hidden"
+        aria-label="Open navigation menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg
+          id="menu-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.8"
+          stroke="currentColor"
+          class="h-6 w-6"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+          />
+        </svg>
+      </button>
+
     </div>
+
   </div>
+
+
+  <!-- ======================================================= -->
+  <!-- MOBILE NAVIGATION -->
+  <!-- ======================================================= -->
+
+  <div
+    id="mobile-menu"
+    class="invisible absolute left-0 top-full w-full -translate-y-2 border-b border-white/10 bg-slate-950/95 opacity-0 shadow-xl shadow-black/20 backdrop-blur-xl transition-all duration-300 md:hidden"
+  >
+    <nav
+      class="mx-auto max-w-7xl px-4 py-5 sm:px-6"
+      aria-label="Mobile navigation"
+      data-aria-en="Mobile navigation"
+      data-aria-id="Navigasi mobile"
+    >
+
+      <ul class="flex flex-col gap-1">
+
+        <!-- Home -->
+        <li>
+          <a
+            href="#hero"
+            data-mobile-nav-link="hero"
+            class="mobile-nav-link block rounded-lg px-4 py-3 font-medium text-slate-300 transition-all duration-300 hover:bg-white/5 hover:text-cyan-400"
+          >
+            <span
+              data-en="Home"
+              data-id="Beranda"
+            >
+              Home
+            </span>
+          </a>
+        </li>
+
+
+        <!-- About -->
+        <li>
+          <a
+            href="#about"
+            data-mobile-nav-link="about"
+            class="mobile-nav-link block rounded-lg px-4 py-3 font-medium text-slate-300 transition-all duration-300 hover:bg-white/5 hover:text-cyan-400"
+          >
+            <span
+              data-en="About"
+              data-id="Tentang"
+            >
+              About
+            </span>
+          </a>
+        </li>
+
+
+        <!-- Projects -->
+        <li>
+          <a
+            href="#projects"
+            data-mobile-nav-link="projects"
+            class="mobile-nav-link block rounded-lg px-4 py-3 font-medium text-slate-300 transition-all duration-300 hover:bg-white/5 hover:text-cyan-400"
+          >
+            <span
+              data-en="Projects"
+              data-id="Proyek"
+            >
+              Projects
+            </span>
+          </a>
+        </li>
+
+
+        <!-- Skills -->
+        <li>
+          <a
+            href="#skills"
+            data-mobile-nav-link="skills"
+            class="mobile-nav-link block rounded-lg px-4 py-3 font-medium text-slate-300 transition-all duration-300 hover:bg-white/5 hover:text-cyan-400"
+          >
+            <span
+              data-en="Skills"
+              data-id="Keahlian"
+            >
+              Skills
+            </span>
+          </a>
+        </li>
+
+
+        <!-- Contact -->
+        <li>
+          <a
+            href="#contact"
+            data-mobile-nav-link="contact"
+            class="mobile-nav-link block rounded-lg px-4 py-3 font-medium text-slate-300 transition-all duration-300 hover:bg-white/5 hover:text-cyan-400"
+          >
+            <span
+              data-en="Contact"
+              data-id="Kontak"
+            >
+              Contact
+            </span>
+          </a>
+        </li>
+
+      </ul>
+
+
+      <!-- =================================================== -->
+      <!-- MOBILE LANGUAGE -->
+      <!-- =================================================== -->
+
+      <div
+        class="mt-4 flex items-center justify-between border-t border-white/10 pt-4"
+      >
+        <span
+          class="text-sm font-medium text-slate-400"
+          data-en="Language"
+          data-id="Bahasa"
+        >
+          Language
+        </span>
+
+        <LanguageSwitcher />
+      </div>
+
+
+      <!-- =================================================== -->
+      <!-- MOBILE CTA -->
+      <!-- =================================================== -->
+
+      <a
+        href="#contact"
+        class="mobile-nav-link mt-4 flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-cyan-500 to-violet-500 px-5 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+      >
+        <span
+          data-en="Let's Connect"
+          data-id="Mari Terhubung"
+        >
+          Let's Connect
+        </span>
+      </a>
+
+    </nav>
+  </div>
+
 </header>
 
-<style>
-  @reference tailwindcss/base;
-  @reference tailwindcss/components;
-  @reference tailwindcss/utilities;
-
-  .navbar-fixed {
-    @apply fixed bg-transparent transition-opacity duration-1000 ease-linear shadow-[inset_0_-1px_0_0_rgba(0,0,0,0.2)] dark:shadow-[inset_0_-1px_0_0_rgba(255,255,255,0.2)];
-  }
-</style>
 
 <script>
-  const hamburger = document.querySelector("#hamburger");
-  const navmenu = document.querySelector("#nav-menu");
+  const navbar =
+    document.getElementById("navbar");
 
-  const hamburgerPath = "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5";
-  const closePath = "M6 18 18 6M6 6l12 12";
+  const menuButton =
+    document.getElementById("menu-button");
 
-  let isOpen = false;
-  if (hamburger && navmenu) {
-    const svg = hamburger.querySelector("svg");
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("hamburger-active");
-      isOpen = !isOpen;
-      navmenu.classList.toggle("hidden");
+  const mobileMenu =
+    document.getElementById("mobile-menu");
 
-      if (svg) {
-        if (isOpen) {
-          svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="${closePath}" />`;
+  const menuIcon =
+    document.getElementById("menu-icon");
+
+
+  /* ========================================================= */
+  /* LANGUAGE                                                  */
+  /* ========================================================= */
+
+  function getCurrentLanguage():
+    "en" | "id" {
+
+    return document.documentElement.lang === "id"
+      ? "id"
+      : "en";
+  }
+
+
+  /* ========================================================= */
+  /* MOBILE MENU                                               */
+  /* ========================================================= */
+
+  const hamburgerPath =
+    "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5";
+
+  const closePath =
+    "M6 18 18 6M6 6l12 12";
+
+  let menuOpen = false;
+
+
+  function updateMenuIcon() {
+    const path =
+      menuIcon?.querySelector("path");
+
+    if (!path) return;
+
+    path.setAttribute(
+      "d",
+      menuOpen
+        ? closePath
+        : hamburgerPath
+    );
+  }
+
+
+  /* ========================================================= */
+  /* MOBILE MENU ARIA LABEL                                    */
+  /* ========================================================= */
+
+  function updateMenuLabel() {
+    if (!menuButton) return;
+
+    const language =
+      getCurrentLanguage();
+
+    if (menuOpen) {
+      menuButton.setAttribute(
+        "aria-label",
+        language === "id"
+          ? "Tutup menu navigasi"
+          : "Close navigation menu"
+      );
+    } else {
+      menuButton.setAttribute(
+        "aria-label",
+        language === "id"
+          ? "Buka menu navigasi"
+          : "Open navigation menu"
+      );
+    }
+  }
+
+
+  function openMenu() {
+    if (
+      !mobileMenu ||
+      !menuButton
+    ) {
+      return;
+    }
+
+    menuOpen = true;
+
+    mobileMenu.classList.remove(
+      "invisible",
+      "opacity-0",
+      "-translate-y-2"
+    );
+
+    mobileMenu.classList.add(
+      "visible",
+      "opacity-100",
+      "translate-y-0"
+    );
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+    updateMenuLabel();
+    updateMenuIcon();
+  }
+
+
+  function closeMenu() {
+    if (
+      !mobileMenu ||
+      !menuButton
+    ) {
+      return;
+    }
+
+    menuOpen = false;
+
+    mobileMenu.classList.add(
+      "invisible",
+      "opacity-0",
+      "-translate-y-2"
+    );
+
+    mobileMenu.classList.remove(
+      "visible",
+      "opacity-100",
+      "translate-y-0"
+    );
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    updateMenuLabel();
+    updateMenuIcon();
+  }
+
+
+  menuButton?.addEventListener(
+    "click",
+    () => {
+      if (menuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+  );
+
+
+  /* ========================================================= */
+  /* CLOSE MOBILE MENU AFTER CLICK                             */
+  /* ========================================================= */
+
+  document
+    .querySelectorAll(
+      ".mobile-nav-link"
+    )
+    .forEach((link) => {
+      link.addEventListener(
+        "click",
+        closeMenu
+      );
+    });
+
+
+  /* ========================================================= */
+  /* ESCAPE KEY                                                */
+  /* ========================================================= */
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key === "Escape" &&
+        menuOpen
+      ) {
+        closeMenu();
+      }
+    }
+  );
+
+
+  /* ========================================================= */
+  /* WINDOW RESIZE                                             */
+  /* ========================================================= */
+
+  window.addEventListener(
+    "resize",
+    () => {
+      if (
+        window.innerWidth >= 768 &&
+        menuOpen
+      ) {
+        closeMenu();
+      }
+    }
+  );
+
+
+  /* ========================================================= */
+  /* NAVBAR SCROLL EFFECT                                      */
+  /* ========================================================= */
+
+  function updateNavbar() {
+    if (!navbar) return;
+
+    if (
+      window.scrollY > 20
+    ) {
+      navbar.classList.add(
+        "bg-slate-950/80",
+        "backdrop-blur-xl",
+        "border-white/10",
+        "shadow-lg",
+        "shadow-black/10"
+      );
+
+      navbar.classList.remove(
+        "border-transparent"
+      );
+    } else {
+      navbar.classList.remove(
+        "bg-slate-950/80",
+        "backdrop-blur-xl",
+        "border-white/10",
+        "shadow-lg",
+        "shadow-black/10"
+      );
+
+      navbar.classList.add(
+        "border-transparent"
+      );
+    }
+  }
+
+
+  updateNavbar();
+
+
+  window.addEventListener(
+    "scroll",
+    updateNavbar,
+    {
+      passive: true,
+    }
+  );
+
+
+  /* ========================================================= */
+  /* ACTIVE NAVIGATION                                         */
+  /* ========================================================= */
+
+  const sectionIds = [
+    "hero",
+    "about",
+    "projects",
+    "skills",
+    "contact",
+  ];
+
+
+  const sections =
+    sectionIds
+      .map(
+        (id) =>
+          document.getElementById(id)
+      )
+      .filter(
+        (
+          section
+        ): section is HTMLElement =>
+          section !== null
+      );
+
+
+  const desktopLinks =
+    document.querySelectorAll<HTMLElement>(
+      "[data-nav-link]"
+    );
+
+
+  const mobileLinks =
+    document.querySelectorAll<HTMLElement>(
+      "[data-mobile-nav-link]"
+    );
+
+
+  function setActiveLink(
+    activeSection: string
+  ) {
+
+    /* Desktop */
+
+    desktopLinks.forEach(
+      (link) => {
+        const section =
+          link.dataset.navLink;
+
+        if (
+          section === activeSection
+        ) {
+          link.classList.add(
+            "text-cyan-400"
+          );
+
+          link.classList.remove(
+            "text-slate-400"
+          );
         } else {
-          svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="${hamburgerPath}" />`;
+          link.classList.remove(
+            "text-cyan-400"
+          );
+
+          link.classList.add(
+            "text-slate-400"
+          );
         }
       }
-    });
+    );
+
+
+    /* Mobile */
+
+    mobileLinks.forEach(
+      (link) => {
+        const section =
+          link.dataset
+            .mobileNavLink;
+
+        if (
+          section === activeSection
+        ) {
+          link.classList.add(
+            "text-cyan-400",
+            "bg-white/5"
+          );
+
+          link.classList.remove(
+            "text-slate-300"
+          );
+        } else {
+          link.classList.remove(
+            "text-cyan-400",
+            "bg-white/5"
+          );
+
+          link.classList.add(
+            "text-slate-300"
+          );
+        }
+      }
+    );
   }
 
-  const scrollContainer = document.querySelector(".overflow-y-auto");
-  const logo = document.querySelector("#Logo");
-  if (scrollContainer && logo) {
-    scrollContainer.addEventListener("scroll", () => {
-      if (scrollContainer.scrollTop > 0) {
-        logo.classList.add("opacity-0");
-      } else {
-        logo.classList.remove("opacity-0");
-      }
-    });
-  }
 
-  document.querySelectorAll("#nav-item").forEach((link) => {
-    link.addEventListener("click", function (this: HTMLElement, e: Event) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href");
-      const target = document.querySelector(targetId!);
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+  /* ========================================================= */
+  /* SECTION OBSERVER                                          */
+  /* ========================================================= */
+
+  const sectionObserver =
+    new IntersectionObserver(
+      (entries) => {
+        const visibleSections =
+          entries
+            .filter(
+              (entry) =>
+                entry.isIntersecting
+            )
+            .sort(
+              (a, b) =>
+                b.intersectionRatio -
+                a.intersectionRatio
+            );
+
+
+        if (
+          visibleSections.length === 0
+        ) {
+          return;
+        }
+
+
+        const activeSection =
+          visibleSections[0]
+            .target.id;
+
+
+        setActiveLink(
+          activeSection
+        );
+      },
+      {
+        root: null,
+
+        rootMargin:
+          "-20% 0px -60% 0px",
+
+        threshold: [
+          0,
+          0.1,
+          0.25,
+          0.5,
+        ],
       }
-    });
-  });
+    );
+
+
+  sections.forEach(
+    (section) => {
+      sectionObserver.observe(
+        section
+      );
+    }
+  );
+
+
+  /* ========================================================= */
+  /* LANGUAGE CHANGE EVENT                                     */
+  /* ========================================================= */
+
+  window.addEventListener(
+    "portfolio-language-change",
+    () => {
+      updateMenuLabel();
+    }
+  );
+
+
+  /* ========================================================= */
+  /* INITIAL STATE                                             */
+  /* ========================================================= */
+
+  setActiveLink("hero");
+  updateMenuLabel();
 </script>
