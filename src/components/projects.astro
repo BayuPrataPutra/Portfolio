@@ -13,10 +13,52 @@ interface Project {
   imageAlt: LocalizedText;
   technologies: string[];
   github?: string;
+  liveUrl?: string;
   featured?: boolean;
 }
 
 const projects: Project[] = [
+  {
+    title: "Catetin",
+
+    subtitle: {
+      en: "Personal & MSME Financial Management App",
+      id: "Aplikasi Manajemen Keuangan Pribadi & UMKM",
+    },
+
+    description: {
+      en:
+        "A full-stack financial management web application for personal and small business use, featuring transaction tracking, multi-account and multi-workspace management, financial reports, role-based collaboration, secure authentication, offline read-only access, and PWA support.",
+
+      id:
+        "Aplikasi web manajemen keuangan full-stack untuk kebutuhan pribadi dan UMKM dengan fitur pencatatan transaksi, multi-akun dan multi-workspace, laporan keuangan, kolaborasi berbasis role, autentikasi aman, akses offline read-only, dan dukungan PWA.",
+    },
+
+    date: {
+      en: "August 2026",
+      id: "Agustus 2026",
+    },
+
+    image: "/img/bg-catetin.png",
+
+    imageAlt: {
+      en: "Catetin Financial Management Application",
+      id: "Aplikasi Manajemen Keuangan Catetin",
+    },
+
+    technologies: [
+      "Vue 3",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Pinia",
+      "PWA",
+    ],
+
+    liveUrl: "https://catetin.bayuprataputra.workers.dev/",
+  },
+
   {
     title: "Hygipot",
 
@@ -94,8 +136,7 @@ const projects: Project[] = [
       "PostgreSQL",
     ],
 
-    github:
-      "https://github.com/BayuPrataPutra/Skinaria",
+    github: "https://github.com/BayuPrataPutra/Skinaria",
   },
 
   {
@@ -133,8 +174,7 @@ const projects: Project[] = [
       "Google Maps API",
     ],
 
-    github:
-      "https://github.com/BayuPrataPutra/Pocle",
+    github: "https://github.com/BayuPrataPutra/Pocle",
   },
 
   {
@@ -211,8 +251,7 @@ const projects: Project[] = [
       "Laravel",
     ],
 
-    github:
-      "https://github.com/BayuPrataPutra/Velotto",
+    github: "https://github.com/BayuPrataPutra/Velotto",
   },
 
   {
@@ -281,7 +320,6 @@ const projects: Project[] = [
 
       </div>
 
-
       <h2
         class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
       >
@@ -301,7 +339,6 @@ const projects: Project[] = [
         </span>
       </h2>
 
-
       <p
         class="mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8"
         data-en="A collection of projects I've developed across Internet of Things, software development, machine learning, mobile applications, web technologies, and intelligent systems."
@@ -314,7 +351,6 @@ const projects: Project[] = [
 
     </div>
 
-
     <!-- ===================================================== -->
     <!-- PROJECT LIST -->
     <!-- ===================================================== -->
@@ -323,8 +359,7 @@ const projects: Project[] = [
 
       {
         projects.map((project, index) => {
-          const reversed =
-            index % 2 !== 0;
+          const reversed = index % 2 !== 0;
 
           return (
             <article
@@ -356,7 +391,6 @@ const projects: Project[] = [
                   aria-hidden="true"
                 ></div>
 
-
                 <!-- Visual Card -->
                 <div
                   class="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 shadow-2xl shadow-black/20"
@@ -380,26 +414,18 @@ const projects: Project[] = [
                         ></div>
                       </>
                     ) : (
-                      /* =========================================== */
-                      /* HYGIPOT PLACEHOLDER                         */
-                      /* =========================================== */
-
                       <div
                         class="relative flex h-full w-full items-center justify-center overflow-hidden"
                       >
 
-                        <!-- Grid -->
                         <div
                           class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:28px_28px]"
                         ></div>
 
-                        <!-- Glow -->
                         <div
                           class="absolute h-56 w-56 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 blur-[70px]"
                         ></div>
 
-
-                        <!-- Icon -->
                         <div
                           class="relative z-10 flex flex-col items-center text-center"
                         >
@@ -430,18 +456,10 @@ const projects: Project[] = [
                             </svg>
                           </div>
 
-
                           <p
                             class="text-xl font-bold text-white sm:text-2xl"
                           >
-                            Hygipot
-                          </p>
-
-
-                          <p
-                            class="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-cyan-400"
-                          >
-                            IoT • Cloud • Computer Vision
+                            {project.title}
                           </p>
 
                         </div>
@@ -449,7 +467,6 @@ const projects: Project[] = [
                       </div>
                     )
                   }
-
 
                   <!-- Featured Label -->
                   {
@@ -467,7 +484,6 @@ const projects: Project[] = [
                 </div>
 
               </div>
-
 
               <!-- ================================================= -->
               <!-- PROJECT CONTENT -->
@@ -503,14 +519,12 @@ const projects: Project[] = [
 
                 </div>
 
-
                 <!-- Project Name -->
                 <h3
                   class="text-3xl font-bold tracking-tight text-white sm:text-4xl"
                 >
                   {project.title}
                 </h3>
-
 
                 <!-- Project Type -->
                 <p
@@ -527,7 +541,6 @@ const projects: Project[] = [
                   {project.subtitle.en}
                 </p>
 
-
                 <!-- Description -->
                 <p
                   class="mt-5 max-w-xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8"
@@ -536,7 +549,6 @@ const projects: Project[] = [
                 >
                   {project.description.en}
                 </p>
-
 
                 <!-- Technologies -->
                 <div
@@ -555,60 +567,127 @@ const projects: Project[] = [
                   }
                 </div>
 
-
-                <!-- GitHub -->
+                <!-- Project Actions -->
                 {
-                  project.github && (
-                    <div class="mt-7">
+                  (project.liveUrl || project.github) && (
+                    <div class="mt-7 flex flex-wrap items-center gap-4">
 
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="group inline-flex items-center gap-2 text-sm font-semibold text-slate-300 transition-colors duration-300 hover:text-cyan-400"
-                      >
+                      <!-- Live Application -->
+                      {
+                        project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-cyan-500/15 hover:text-cyan-200"
+                            data-aria-en={`Try ${project.title}`}
+                            data-aria-id={`Coba ${project.title}`}
+                            aria-label={`Try ${project.title}`}
+                          >
 
-                        <!-- GitHub Icon -->
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="h-5 w-5"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12 .75a11.25 11.25 0 0 0-3.556 21.922c.562.104.768-.244.768-.541 0-.268-.01-1.154-.015-2.09-3.125.68-3.785-1.326-3.785-1.326-.511-1.3-1.249-1.646-1.249-1.646-1.02-.697.077-.683.077-.683 1.128.08 1.722 1.158 1.722 1.158 1.003 1.718 2.63 1.222 3.272.934.102-.726.393-1.222.714-1.503-2.495-.284-5.12-1.248-5.12-5.557 0-1.228.439-2.232 1.158-3.019-.116-.284-.502-1.428.11-2.977 0 0 .944-.302 3.093 1.153A10.743 10.743 0 0 1 12 6.246c.956.004 1.919.129 2.817.379 2.147-1.455 3.09-1.153 3.09-1.153.613 1.549.227 2.693.111 2.977.72.787 1.157 1.791 1.157 3.019 0 4.32-2.63 5.27-5.133 5.548.403.347.762 1.03.762 2.076 0 1.5-.014 2.708-.014 3.076 0 .3.203.65.773.54A11.25 11.25 0 0 0 12 .75Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
+                            <!-- External Link Icon -->
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.8"
+                              stroke="currentColor"
+                              class="h-4 w-4"
+                              aria-hidden="true"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 6H6.75A2.25 2.25 0 0 0 4.5 8.25v9A2.25 2.25 0 0 0 6.75 19.5h9A2.25 2.25 0 0 0 18 17.25V10.5"
+                              />
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5H19.5V10.5M19.5 4.5 10.5 13.5"
+                              />
+                            </svg>
 
+                            <span
+                              data-en="Try the App"
+                              data-id="Coba Aplikasi"
+                            >
+                              Try the App
+                            </span>
 
-                        <span
-                          data-en="View Repository"
-                          data-id="Lihat Repository"
-                        >
-                          View Repository
-                        </span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.8"
+                              stroke="currentColor"
+                              class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                              aria-hidden="true"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                              />
+                            </svg>
 
+                          </a>
+                        )
+                      }
 
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.8"
-                          stroke="currentColor"
-                          class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                          aria-hidden="true"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                          />
-                        </svg>
+                      <!-- GitHub Repository -->
+                      {
+                        project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group inline-flex items-center gap-2 text-sm font-semibold text-slate-300 transition-colors duration-300 hover:text-cyan-400"
+                            data-aria-en={`View ${project.title} repository`}
+                            data-aria-id={`Lihat repository ${project.title}`}
+                            aria-label={`View ${project.title} repository`}
+                          >
 
-                      </a>
+                            <!-- GitHub Icon -->
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              class="h-5 w-5"
+                              aria-hidden="true"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M12 .75a11.25 11.25 0 0 0-3.556 21.922c.562.104.768-.244.768-.541 0-.268-.01-1.154-.015-2.09-3.125.68-3.785-1.326-3.785-1.326-.511-1.3-1.249-1.646-1.249-1.646-1.02-.697.077-.683.077-.683 1.128.08 1.722 1.158 1.722 1.158 1.003 1.718 2.63 1.222 3.272.934.102-.726.393-1.222.714-1.503-2.495-.284-5.12-1.248-5.12-5.557 0-1.228.439-2.232 1.158-3.019-.116-.284-.502-1.428.11-2.977 0 0 .944-.302 3.093 1.153A10.743 10.743 0 0 1 12 6.246c.956.004 1.919.129 2.817.379 2.147-1.455 3.09-1.153 3.09-1.153.613 1.549.227 2.693.111 2.977.72.787 1.157 1.791 1.157 3.019 0 4.32-2.63 5.27-5.133 5.548.403.347.762 1.03.762 2.076 0 1.5-.014 2.708-.014 3.076 0 .3.203.65.773.54A11.25 11.25 0 0 0 12 .75Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+
+                            <span
+                              data-en="View Repository"
+                              data-id="Lihat Repository"
+                            >
+                              View Repository
+                            </span>
+
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.8"
+                              stroke="currentColor"
+                              class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                              aria-hidden="true"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                              />
+                            </svg>
+
+                          </a>
+                        )
+                      }
 
                     </div>
                   )
@@ -622,7 +701,6 @@ const projects: Project[] = [
       }
 
     </div>
-
 
     <!-- ===================================================== -->
     <!-- GITHUB CTA -->
@@ -640,7 +718,6 @@ const projects: Project[] = [
         More Projects
       </p>
 
-
       <h3
         class="mt-3 text-xl font-bold text-white sm:text-2xl"
         data-en="Explore more of my work on GitHub."
@@ -648,7 +725,6 @@ const projects: Project[] = [
       >
         Explore more of my work on GitHub.
       </h3>
-
 
       <p
         class="mx-auto mt-3 max-w-xl text-sm leading-7 text-slate-400"
@@ -658,7 +734,6 @@ const projects: Project[] = [
         Visit my GitHub profile to explore repositories, experiments,
         academic projects, and other things I've worked on.
       </p>
-
 
       <a
         href="https://github.com/BayuPrataPutra"
@@ -682,14 +757,12 @@ const projects: Project[] = [
           />
         </svg>
 
-
         <span
           data-en="Visit My GitHub"
           data-id="Kunjungi GitHub Saya"
         >
           Visit My GitHub
         </span>
-
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
